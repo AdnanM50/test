@@ -24,30 +24,30 @@ const Page = () => {
   useEffect(() => {
     form.setFieldsValue({
       ...data,
-      documents:( data?.documents?.map((img, index) => ({
+      documents: data?.documents?.map((img, index) => ({
         uid: `-${index + 1}`,
         name: img,
-        status: 'done',
+        status: "done",
         url: img,
-    }))),
+      })),
       name: data?.name,
       email: data?.email,
       phone: data?.phone,
       mobile: data?.phone,
       about: data?.about,
       address: data?.address,
-      license_no:data?.license_no,
-      country_name:data?.country?.name,
-      country_code:data?.country?.code,
-      currency_name:data?.currency?.name,
-      currency_symbol:data?.currency?.symbol,
-      currency_code:data?.currency?.code,
-      lat:data?.location?.lat,
-      lng:data?.location?.lng,
-      vehicle_lat:data?.vehicle?.location?.lat,
-      vehicle_lng:data?.vehicle?.location?.lng,
-      driver_name:data?.vehicle?.name,
-      category:data?.vehicle?.category?.name,
+      license_no: data?.license_no,
+      country_name: data?.country?.name,
+      country_code: data?.country?.code,
+      currency_name: data?.currency?.name,
+      currency_symbol: data?.currency?.symbol,
+      currency_code: data?.currency?.code,
+      lat: data?.location?.lat,
+      lng: data?.location?.lng,
+      vehicle_lat: data?.vehicle?.location?.lat,
+      vehicle_lng: data?.vehicle?.location?.lng,
+      driver_name: data?.vehicle?.name,
+      category: data?.vehicle?.category?.name,
       image: data?.vehicle?.category?.image && [
         {
           uid: `-${0 + 1}`,
@@ -56,28 +56,28 @@ const Page = () => {
           url: data?.vehicle?.category?.image,
         },
       ],
-      model:data?.vehicle?.model,
-      year:data?.vehicle?.year,
-      images:( data?.vehicle?.images.map((img, index) => ({
+      model: data?.vehicle?.model,
+      year: data?.vehicle?.year,
+      images: data?.vehicle?.images.map((img, index) => ({
         uid: `-${index + 1}`,
         name: img,
-        status: 'done',
+        status: "done",
         url: img,
-    }))),
-    max_power:data?.vehicle?.max_power,
-    max_speed:data?.vehicle?.max_speed,
-    capacity:data?.vehicle?.capacity,
-    color:data?.vehicle?.color,
-    fuel_type:data?.vehicle?.fuel_type,
-    mileage:data?.vehicle?.mileage,
-    gear_type:data?.vehicle?.gear_type,
-    vehicle_number:data?.vehicle?.vehicle_number,
-    document_image:( data?.vehicle?.documents.map((img, index) => ({
-      uid: `-${index + 1}`,
-      name: img,
-      status: 'done',
-      url: img,
-  }))),
+      })),
+      max_power: data?.vehicle?.max_power,
+      max_speed: data?.vehicle?.max_speed,
+      capacity: data?.vehicle?.capacity,
+      color: data?.vehicle?.color,
+      fuel_type: data?.vehicle?.fuel_type,
+      mileage: data?.vehicle?.mileage,
+      gear_type: data?.vehicle?.gear_type,
+      vehicle_number: data?.vehicle?.vehicle_number,
+      document_image: data?.vehicle?.documents.map((img, index) => ({
+        uid: `-${index + 1}`,
+        name: img,
+        status: "done",
+        url: img,
+      })),
 
       image: data?.image && [
         {
@@ -254,7 +254,7 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-       <Form.Item
+        <Form.Item
           label=" license_no"
           name="license_no"
           rules={[
@@ -634,8 +634,10 @@ const Page = () => {
             disabled={!edit}
           />
           <div className="my-3 flex items-center gap-x-3">
-            <Checkbox onChange={onChange}>Online</Checkbox>
-            <Checkbox onChange={onChange2}>AC</Checkbox>
+            <Checkbox onChange={onChange} defaultValue={data?.vehicle?.online}>
+              Online
+            </Checkbox>
+            <Checkbox onChange={onChange2} defaultValue={data?.vehicle?.ac}>AC</Checkbox>
           </div>
         </Form.Item>
         <MultipleImageInput name="document_image" label="Images" />
