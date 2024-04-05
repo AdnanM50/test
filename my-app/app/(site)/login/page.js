@@ -23,11 +23,17 @@ const Login = () => {
         message.success(msg);
         localStorage.setItem("token", data.token);
         router.push("/admin");
-      } else {
-        localStorage.setItem("token", data.token);
+      }
+      else if (data?.role === "driver") {
         message.success(msg);
         getUser();
-        router.push("/profile/user");
+        router.push("/profile/driver");
+
+      }
+
+       else {
+        localStorage.setItem("token", data.token);
+       
       }
     }
   };

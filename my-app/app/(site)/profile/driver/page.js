@@ -70,14 +70,14 @@ const Page = () => {
     <div className="xl:px-[32px] xl:pb-0  sm:-pb-[60px] pb-[60px]">
       <div className="flex justify-between items-center">
         <h3 className="uppercase font-normal font-['Mulish'] mt-[40px] text-[20px] ">
-          Personal Info{" "}
+          {i18n.t("Personal Info")}{" "}
         </h3>
         <div
           onClick={() => setEdit(!edit)}
           className="bg-primary text-white px-[30px] py-[10px] flex items-center gap-2 cursor-pointer "
         >
           {edit ? <FaTimes /> : <FaEdit />}
-          <p>{edit ? "Cancel" : "Edit"}</p>
+          <p>{edit ? i18n.t("Cancel") : i18n.t("Edit")}</p>
         </div>
       </div>
       <Form
@@ -90,7 +90,7 @@ const Page = () => {
           {edit ? (
             <MultipleImageInput
               name="image"
-              label="Profile Image"
+              label={i18n.t("Profile Image")}
               maxCount={1}
               className="rounded-none p-2 border border-[#ebedf9]"
             />
@@ -103,28 +103,28 @@ const Page = () => {
           )}
         </div>
         <Form.Item
-          label="Full Name"
+          label={i18n.t("Full Name")}
           name="name"
           rules={[
             {
               required: true,
-              message: "Please input your full Name!",
+              message: i18n.t("Please input your full Name!"),
             },
           ]}
         >
           <Input
-            placeholder="Full Name"
+            placeholder={i18n.t("Full Name")}
             className="rounded-none p-2 border border-[#ebedf9]"
             disabled={!edit}
           />
         </Form.Item>
         <Form.Item
-          label="Email"
+          label={i18n.t("Email")}
           name="email"
           rules={[
             {
               required: true,
-              message: "Please input your Email!",
+              message: i18n.t("Please input your Email!"),
             },
           ]}
         >

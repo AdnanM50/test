@@ -197,9 +197,9 @@ const CreateAccount = () => {
                       return message.error(msg);
                     } else {
                       setOtpModal(false);
-                      if (data?.role === "trainer") {
+                      if (data?.role === "driver") {
                         setLoadingRequest(false)
-                        router.push("/profile/trainer");
+                        router.push("/profile/driver");
                         localStorage.setItem("token", data.token);
                         message.success(msg);
                       } else if (data?.role === "admin") {
