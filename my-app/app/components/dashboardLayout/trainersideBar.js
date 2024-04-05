@@ -1,12 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import { useUser } from "@/app/contexts/user";
+import { CaretDownOutlined, } from "@ant-design/icons";
+import { message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { message } from "antd";
-import {CaretDownOutlined,} from "@ant-design/icons";
-import { useUser } from "@/app/contexts/user";
+import { useEffect, useState } from "react";
 
 const TrainerSidebar = ({  menu }) => {
   const router = useRouter();
@@ -40,8 +39,8 @@ const TrainerSidebar = ({  menu }) => {
   };
 
   const clickRoute = () => {
-    if (user?.role === "trainer") {
-      router.push("/profile/trainer");
+    if (user?.role === "driver") {
+      router.push("/profile/driver");
     } else {
       router.push("/profile/user");
     }
@@ -99,9 +98,7 @@ const TrainerSidebar = ({  menu }) => {
               <h3 className="text-[18px] font-['Mulish'] font-bold uppercase mt-2 text-[#2B2B2B]">
                 {user?.name}
               </h3>
-              <h6 className="text-[16px]  font-normal uppercase mt-2 text-[#2B2B2B]">
-                {user?.role === "trainer" ? "Fitness Trainer" : ""}
-              </h6>
+            
             </div>
             <div onClick={() => setToggle(!toggle)} className="">
               <button className="bg-primary text-white flex items-center py-[12px] px-[28px] justify-between h-[40px] xl:hidden md:hidden btn relative z-50">

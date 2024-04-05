@@ -34,10 +34,15 @@ const Layout = ({ children }) => {
   const menu = [
     {
       label: "Account Settings",
-      href: "/profile/user",
+      href: "/profile/driver",
       icon: <SettingFilled />,
     },
    
+    {
+      label: "Change Password",
+      icon: <RiLockPasswordLine />,
+      href: "/profile/driver/change-password",
+    },
     {
       label: "Sign out",
       icon: <LoginOutlined />,
@@ -75,21 +80,7 @@ const userMenu = [
     href: "/profile/user",
     icon: <SettingFilled />,
   },
-  {
-    label: "My Records",
-    href: "/profile/user/record",
-    icon: <IoCopySharp />,
-  },
-  {
-    label: "My Orders",
-    href: "/profile/user/orders",
-    icon: <IoCopySharp />,
-  },
-  {
-    label: "Membership Level",
-    href: "/profile/user/membership",
-    icon: <UserAddOutlined />,
-  },
+ 
   {
     label: "Change Password",
     icon: <RiLockPasswordLine />,

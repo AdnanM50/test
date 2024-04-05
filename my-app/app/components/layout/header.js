@@ -24,10 +24,11 @@ const Header = () => {
   const onClose = () => {
     setOpen(false);
   };
+  
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
-    setItems([]);
+    ([]);
     message.success("Logout Successfully");
     push("/");
     getUser();

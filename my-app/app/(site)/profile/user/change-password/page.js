@@ -1,13 +1,10 @@
 'use client'
 import { updatePassword } from '@/app/helpers/backend';
-import { useI18n } from '@/app/providers/i18n';
 import { Form, Input, message } from 'antd';
 import { useRouter } from 'next/navigation';
-import React from 'react';
 
 const ChangePassword = () => {
     const router = useRouter();
-    const i18n = useI18n();
     const [form] = Form.useForm();
 
     const handlePassword = async (values) => {
@@ -30,7 +27,7 @@ const ChangePassword = () => {
 
     return (
         <div className='p-4'>
-            <h2 className='header_2 text-[#2b2b2b] font-bold capitalize'>{i18n.t('Change Password')}</h2>
+            <h2 className='header_2 text-[#2b2b2b] font-bold capitalize'>Change Password</h2>
             <Form onFinish={handlePassword} form={form} className='mt-6'>
 
                 <Form.Item
@@ -38,12 +35,12 @@ const ChangePassword = () => {
                     rules={[
                         {
                             required: true,
-                            message: i18n.t("Please input your Current Password!"),
+                            message: "Please input your Current Password!",
                         },
                     ]}
                 >
                     <Input.Password
-                        placeholder={i18n.t("Current Password *")}
+                        placeholder="Current Password *"
                         className="rounded-none p-2 border border-[#ebedf9]"
                     />
                 </Form.Item>
@@ -52,12 +49,12 @@ const ChangePassword = () => {
                     rules={[
                         {
                             required: true,
-                            message: i18n.t("Please input your New Password!"),
+                            message: "Please input your New Password!",
                         },
                     ]}
                 >
                     <Input.Password
-                        placeholder={i18n.t("New Password *")}
+                        placeholder="New Password *"
                         className="rounded-none p-2 border border-[#ebedf9]"
                     />
                 </Form.Item>
@@ -66,12 +63,12 @@ const ChangePassword = () => {
                     rules={[
                         {
                             required: true,
-                            message: i18n.t("Please input your Retype_New Password!"),
+                            message: "Please input your Retype_New Password!",
                         },
                     ]}
                 >
                     <Input.Password
-                        placeholder={i18n.t("Retype New Password *")}
+                        placeholder="Retype New Password *"
                         className="rounded-none p-2 border border-[#ebedf9]"
                     />
                 </Form.Item>
@@ -79,7 +76,7 @@ const ChangePassword = () => {
                     htmltype="submit"
                     className="uppercase text-white bg-primary px-[32px] py-[14px] mb-[40px]"
                 >
-                    {i18n.t("Change Password")}
+                    Change Password
                 </button>
             </Form>
         </div>

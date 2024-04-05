@@ -1,7 +1,7 @@
 "use client";
-import { Form, Input, message } from "antd";
 import { useUser } from "@/app/contexts/user";
 import { postLogin } from "@/app/helpers/backend";
+import { Form, Input, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -24,7 +24,7 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         router.push("/admin");
       }
-      else if (data?.role === "driver") {
+      else if (data?.role === "user") {
         message.success(msg);
         getUser();
         router.push("/profile/driver");
@@ -33,6 +33,7 @@ const Login = () => {
 
        else {
         localStorage.setItem("token", data.token);
+        router.push("/profile/user");
        
       }
     }

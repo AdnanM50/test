@@ -31,19 +31,7 @@ const Layout = ({ children }) => {
 
   if (!user) return <div className="min-h-screen bg-gray-100"><MainLoader /></div>
 
-  const menu = [
-    {
-      label: "Account Settings",
-      href: "/profile/user",
-      icon: <SettingFilled />,
-    },
-   
-    {
-      label: "Sign out",
-      icon: <LoginOutlined />,
-      onClick: "onClick",
-    },
-  ];
+ 
   return (
     <div className="min-h-screen bg-gray-100">
       <>
@@ -72,28 +60,14 @@ export default Layout;
 const userMenu = [
   {
     label: "Account Settings",
-    href: "/profile/user",
+    href: "/profile/driver",
     icon: <SettingFilled />,
   },
-  {
-    label: "My Records",
-    href: "/profile/user/record",
-    icon: <IoCopySharp />,
-  },
-  {
-    label: "My Orders",
-    href: "/profile/user/orders",
-    icon: <IoCopySharp />,
-  },
-  {
-    label: "Membership Level",
-    href: "/profile/user/membership",
-    icon: <UserAddOutlined />,
-  },
+ 
   {
     label: "Change Password",
     icon: <RiLockPasswordLine />,
-    href: "/profile/user/change-password",
+    href: "/profile/driver/change-password",
   },
   {
     label: "Sign out",
