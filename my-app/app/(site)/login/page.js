@@ -25,6 +25,7 @@ const Login = () => {
         router.push("/admin");
       }
       else if (data?.role === "driver") {
+        localStorage.setItem("token", data.token);
         message.success(msg);
         getUser();
         router.push("/profile/driver");

@@ -124,7 +124,7 @@ const Page = () => {
   return (
     <div className="xl:px-[32px] xl:pb-0  sm:-pb-[60px] pb-[60px]">
       <div className="flex justify-between items-center">
-        <h3 className="uppercase font-normal font-['Mulish'] mt-[40px] text-[20px] ">
+      <h3 className="uppercase  font-['Mulish'] mt-[40px] lg:text-3xl md:text-2xl text-xl font-semibold ">
           Personal Info{" "}
         </h3>
         <div
@@ -270,9 +270,9 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-        <h2 className="  uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Country
-        </h2>
+        </h3>
         <Form.Item
           label="  Name"
           name="country_name"
@@ -306,9 +306,9 @@ const Page = () => {
           />
         </Form.Item>
 
-        <h2 className="uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Currency
-        </h2>
+        </h3>
         <Form.Item
           label=" Name"
           name="currency_name"
@@ -392,9 +392,9 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-        <h2 className="  uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Vehicle Location
-        </h2>
+        </h3>
         <Form.Item
           label="Lat"
           name="vehicle_lat"
@@ -437,9 +437,9 @@ const Page = () => {
             value: i,
           }))}
         />
-        <h2 className="uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Car Details
-        </h2>
+        </h3>
         <Form.Item
           label="Name"
           name="driver_name"
@@ -634,10 +634,10 @@ const Page = () => {
             disabled={!edit}
           />
           <div className="my-3 flex items-center gap-x-3">
-            <Checkbox onChange={onChange} defaultValue={data?.vehicle?.online}>
+            <Checkbox onChange={onChange} checked={data?.vehicle?.online}>
               Online
             </Checkbox>
-            <Checkbox onChange={onChange2} defaultValue={data?.vehicle?.ac}>AC</Checkbox>
+            <Checkbox onChange={onChange2} checked={data?.vehicle?.ac}>AC</Checkbox>
           </div>
         </Form.Item>
         <MultipleImageInput name="document_image" label="Images" />

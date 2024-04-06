@@ -36,13 +36,13 @@ const Header = () => {
 
   const menu = (
     <Menu className="mt-4" style={{ width: "150px" }}>
-      {(user && user?.role === "user") || user?.role === "trainer" ? (
+      {(user && user?.role === "user") || user?.role === "driver" ? (
         <div>
           <Menu.Item key="0">
             {user && user?.role === "user" ? (
               <Link href="/profile/user"> Profile</Link>
             ) : (
-              <Link href="/profile/trainer"> Profile</Link>
+              <Link href="/profile/driver"> Profile</Link>
             )}
           </Menu.Item>
 

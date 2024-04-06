@@ -14,80 +14,89 @@ const { TextArea } = Input;
 const Page = () => {
   const [form] = Form.useForm();
   const [data, getData, { loading }] = useFetch(fetchUser);
+  console.log(data)
   const [edit, setEdit] = useState(false);
   const [loadingRequest, setLoadingRequest] = useState(false);
   const { getUser } = useUser();
   const [ac, setAc] = useState(data?.vehicle?.ac);
   const [online, setOnline] = useState(data?.vehicle?.online);
-
+  console.log("Online", data?.vehicle?.online);
   const route = useRouter();
   useEffect(() => {
-    form.setFieldsValue({
-      ...data,
-      documents:( data?.documents?.map((img, index) => ({
-        uid: `-${index + 1}`,
-        name: img,
-        status: 'done',
-        url: img,
-    }))),
-      name: data?.name,
-      email: data?.email,
-      phone: data?.phone,
-      mobile: data?.phone,
-      about: data?.about,
-      address: data?.address,
-      license_no:data?.license_no,
-      country_name:data?.country?.name,
-      country_code:data?.country?.code,
-      currency_name:data?.currency?.name,
-      currency_symbol:data?.currency?.symbol,
-      currency_code:data?.currency?.code,
-      lat:data?.location?.lat,
-      lng:data?.location?.lng,
-      vehicle_lat:data?.vehicle?.location?.lat,
-      vehicle_lng:data?.vehicle?.location?.lng,
-      driver_name:data?.vehicle?.name,
-      category:data?.vehicle?.category?.name,
-      image: data?.vehicle?.category?.image && [
-        {
-          uid: `-${0 + 1}`,
-          name: "images",
-          status: "done",
-          url: data?.vehicle?.category?.image,
-        },
-      ],
-      model:data?.vehicle?.model,
-      year:data?.vehicle?.year,
-      images:( data?.vehicle?.images.map((img, index) => ({
-        uid: `-${index + 1}`,
-        name: img,
-        status: 'done',
-        url: img,
-    }))),
-    max_power:data?.vehicle?.max_power,
-    max_speed:data?.vehicle?.max_speed,
-    capacity:data?.vehicle?.capacity,
-    color:data?.vehicle?.color,
-    fuel_type:data?.vehicle?.fuel_type,
-    mileage:data?.vehicle?.mileage,
-    gear_type:data?.vehicle?.gear_type,
-    vehicle_number:data?.vehicle?.vehicle_number,
-    document_image:( data?.vehicle?.documents.map((img, index) => ({
-      uid: `-${index + 1}`,
-      name: img,
-      status: 'done',
-      url: img,
-  }))),
+    getData();
+  }, []);
 
-      image: data?.image && [
-        {
-          uid: `-${0 + 1}`,
-          name: "images",
+  useEffect(() => {
+    if (data) {
+      form.setFieldsValue({
+        ...data,
+        documents: data?.documents?.map((img, index) => ({
+          uid: `-${index + 1}`,
+          name: img,
           status: "done",
-          url: data?.image,
-        },
-      ],
-    });
+          url: img,
+        })),
+        name: data?.name,
+        email: data?.email,
+        phone: data?.phone,
+        mobile: data?.phone,
+        about: data?.about,
+        address: data?.address,
+        license_no: data?.license_no,
+        country_name: data?.country?.name,
+        country_code: data?.country?.code,
+        currency_name: data?.currency?.name,
+        currency_symbol: data?.currency?.symbol,
+        currency_code: data?.currency?.code,
+        lat: data?.location?.lat,
+        lng: data?.location?.lng,
+        vehicle_lat: data?.vehicle?.location?.lat,
+        vehicle_lng: data?.vehicle?.location?.lng,
+        driver_name: data?.vehicle?.name,
+        category: data?.vehicle?.category?.name,
+        category_image: data?.vehicle?.category?.image && [
+          {
+            uid: `-${0 + 1}`,
+            name: "images",
+            status: "done",
+            url: data?.vehicle?.category?.image,
+          },
+        ],
+        model: data?.vehicle?.model,
+        year: data?.vehicle?.year,
+        images: data?.vehicle?.images.map((img, index) => ({
+          uid: `-${index + 1}`,
+          name: img,
+          status: "done",
+          url: img,
+        })),
+        max_power: data?.vehicle?.max_power,
+        max_speed: data?.vehicle?.max_speed,
+        capacity: data?.vehicle?.capacity,
+        color: data?.vehicle?.color,
+        fuel_type: data?.vehicle?.fuel_type,
+        mileage: data?.vehicle?.mileage,
+        ac: data?.vehicle?.ac,
+        online: data?.vehicle?.online,
+        gear_type: data?.vehicle?.gear_type,
+        vehicle_number: data?.vehicle?.vehicle_number,
+        document_image: data?.vehicle?.documents.map((img, index) => ({
+          uid: `-${index + 1}`,
+          name: img,
+          status: "done",
+          url: img,
+        })),
+
+        image: data?.image && [
+          {
+            uid: `-${0 + 1}`,
+            name: "images",
+            status: "done",
+            url: data?.image,
+          },
+        ],
+      });
+    }
   }, [data]);
 
   const handleOnFinish = async (values) => {
@@ -121,10 +130,11 @@ const Page = () => {
     console.log(`checked = ${e.target.checked}`);
     setAc(e.target.checked);
   };
+  console.log("online_", typeof data?.vehicle?.online);
   return (
     <div className="xl:px-[32px] xl:pb-0  sm:-pb-[60px] pb-[60px]">
       <div className="flex justify-between items-center">
-        <h3 className="uppercase font-normal font-['Mulish'] mt-[40px] text-[20px] ">
+      <h3 className="uppercase  font-['Mulish'] mt-[40px] lg:text-3xl md:text-2xl text-xl font-semibold ">
           Personal Info{" "}
         </h3>
         <div
@@ -254,7 +264,7 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-       <Form.Item
+        <Form.Item
           label=" license_no"
           name="license_no"
           rules={[
@@ -270,9 +280,9 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-        <h2 className="  uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Country
-        </h2>
+        </h3>
         <Form.Item
           label="  Name"
           name="country_name"
@@ -306,9 +316,9 @@ const Page = () => {
           />
         </Form.Item>
 
-        <h2 className="uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Currency
-        </h2>
+        </h3>
         <Form.Item
           label=" Name"
           name="currency_name"
@@ -357,9 +367,9 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-        <h2 className="  uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Location
-        </h2>
+        </h3>
         <Form.Item
           label="Lat"
           name="lat"
@@ -392,9 +402,9 @@ const Page = () => {
             disabled={!edit}
           />
         </Form.Item>
-        <h2 className="  uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
           Vehicle Location
-        </h2>
+        </h3>
         <Form.Item
           label="Lat"
           name="vehicle_lat"
@@ -437,9 +447,9 @@ const Page = () => {
             value: i,
           }))}
         />
-        <h2 className="uppercase font-normal font-['Mulish'] mb-[40px] text-[20px]">
-          Car Details
-        </h2>
+        <h3 className="uppercase  font-['Mulish'] my-[20px]   text-xl font-semibold ">
+          Vehicle Details
+        </h3>
         <Form.Item
           label="Name"
           name="driver_name"
@@ -633,11 +643,20 @@ const Page = () => {
             className="rounded-none p-2 border  border-[#ebedf9]"
             disabled={!edit}
           />
-          <div className="my-3 flex items-center gap-x-3">
-            <Checkbox onChange={onChange}>Online</Checkbox>
-            <Checkbox onChange={onChange2}>AC</Checkbox>
-          </div>
         </Form.Item>
+
+        <div className="flex flex-col ">
+          <Form.Item name="online">
+            <Checkbox onChange={onChange} checked={data?.vehicle?.online}>
+              Online
+            </Checkbox>
+          </Form.Item>
+          <Form.Item name="ac">
+            <Checkbox onChange={onChange2} checked={data?.vehicle?.ac}>
+              AC
+            </Checkbox>
+          </Form.Item>
+        </div>
         <MultipleImageInput name="document_image" label="Images" />
       </Form>
     </div>
