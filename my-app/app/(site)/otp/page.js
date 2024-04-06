@@ -89,7 +89,7 @@ const OTP = () => {
                 Your OTP has expired.{" "}
                 <span
                   onClick={handleResendOTP}
-                  className="text-primary underline font-bold cursor-pointer"
+                  className="text-blue-400 underline font-bold cursor-pointer"
                 >
                   Resend OTP
                 </span>
