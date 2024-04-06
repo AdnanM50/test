@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 const TrainerSidebar = ({  menu }) => {
   const router = useRouter();
   const [toggle, setToggle] = useState(false);
-  const { user, getUser } = useUser();
+  const { user, setUser,getUser } = useUser();
   const pathName = usePathname();
-
+  const[loadingRequest,setLoadingRequest]=useState(false);
   useEffect(() => {
     const items = document.querySelectorAll(".menu > li");
     items.forEach((item) => {
@@ -37,6 +37,12 @@ const TrainerSidebar = ({  menu }) => {
     getUser();
     window.location.href = "/login";
   };
+
+
+   
+  //   // window.location.href = "/login";
+
+  // };
 
   const clickRoute = () => {
     if (user?.role === "driver") {

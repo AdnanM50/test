@@ -247,7 +247,7 @@ const CreateAccount = () => {
                         start();
                       }}
                     >
-                      Your OTP has expired.{" "} Resend OTP"
+                      Your OTP has expired.{" "} Resend OTP
                     </span>
                   ) : (
                     <span className="text-primary">
