@@ -47,7 +47,15 @@ const CreateAccount = () => {
       }
     }
   };
-
+  const handleResendOTP = async () => {
+    const res = await sendOtp({ email: email, action: "registration" });
+    if (res?.error === false) {
+      message.success(res.msg);
+      reset();
+    } else {
+      message.error(res.msg);
+    }
+  };
   return (
     <div className="container">
       <div className="bg-formBG xl:mx-60 lg:mx-40 px-2 md:px-10 xl:px-60 md:my-20 md:py-40 py-10">
@@ -247,11 +255,11 @@ const CreateAccount = () => {
                         start();
                       }}
                     >
-                      Your OTP has expired.{" "}<span className="text-blue-400">Resend OTP</span> 
+                      Your OTP has expired.{" "}<span className="text-blue-400"onClick={handleResendOTP}>Resend OTP</span> 
                     </span>
                   ) : (
                     <span className="text-primary">
-                      Your OTP will expire in 
+                      Your OTP will expire in {" "}
                       {time}s
                     </span>
                   )}
