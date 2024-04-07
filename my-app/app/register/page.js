@@ -1,69 +1,171 @@
 "use client";
-import OTPInput from "react-otp-input";
-import PrimaryButton from "@/components/button/primary_button";
-import FormInput from "@/components/from/input";
-import { sendOtp,postRegister } from "@/app/helpers/backend";
-import { Form, Modal, message } from "antd";
-import { useState } from "react";
-import { useTimer } from "use-timer";
-import { useRouter } from "next/navigation";
+//import PhoneNumberInput from "@/components/form/phone_number_input";
 import PhoneNumberInput from "@/components/from/phoneNumberInput";
-// import { useUser } from "../contexts/user";
+import { useUser } from "@/app/contexts/user";
+import { postRegister, sendOtp } from "@/app/helpers/backend";
+import { Form, Input, Modal, message } from "antd";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import OTPInput from "react-otp-input";
+import { useTimer } from "use-timer";
 
-
-const Page = () => {
-  const [email, setEmail] = useState("");
+const CreateAccount = () => {
+  const router = useRouter();
+  const [form] = Form.useForm();
+  const [value, setValue] = useState("user");
   const [otpModal, setOtpModal] = useState(false);
+  const [email, setEmail] = useState("");
   const [registrationValues, setRegistrationValues] = useState({});
   const [loadingRequrest, setLoadingRequest] = useState(false);
-
   const { time, start, pause, reset, status } = useTimer({
     initialTime: 150,
     timerType: "DECREMENTAL",
   });
-  const router = useRouter();
-  // const { getUser } = useUser();
+
+  const handleResendOTP = async () => {
+    const res = await sendOtp({ email: email, action: "registration" });
+    if (res?.error === false) {
+      message.success(res.msg);
+      reset();
+    } else {
+      message.error(res.msg);
+    }
+  };
+
+  useEffect(() => {
+    if (email) {
+      start();
+    }
+    if (time === 0) pause();
+  }, [time, start, pause, email]);
+
+  const inputSubmit = async (values) => {
+    if (!!values?.email) {
+      setEmail(values?.email);
+      const { error, msg, data } = await sendOtp({
+        email: values?.email,
+        action: "registration",
+      });
+      if (error) {
+        return message.error(msg);
+      } else {
+        setOtpModal(true);
+        values.role = values?.radio || "user";
+        setRegistrationValues(values);
+      }
+    }
+  };
+
   return (
-    <div className="w-full flex flex-col justify-center items-center p-8">
-      <h1>This is Register</h1>
+    <div className="container">
+      <div className="bg-formBG xl:mx-60 lg:mx-40 px-2 md:px-10 xl:px-60 md:my-20 md:py-40 py-10">
+        <div className="flex justify-center items-center mb-10">
+          <p className="paragraph_2 mb-2">Join Us</p>
+        </div>
+       
+        <div className="">
+          <Form onFinish={inputSubmit} layout="vertical">
+            <div className="flex justify-center">
+              <h1 className="relative inline-block text-gray2-200 mt-2 mb-[32px] ">
+                <span className="bg-gray2-100 absolute h-[1px] w-10 top-[50%] -left-12 opacity-50"></span>
+                Sign in with your email
+                <span className="bg-gray2-100 absolute h-[1px] w-10 top-[50%] -right-12 opacity-50"></span>
+              </h1>
+            </div>
+            <Form.Item
+              name={"name"}
+              label="Name"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your User Name!",
+                },
+                {
+                  pattern: /^[^\d]+$/,
+                  message: "Name cannot be a number!",
+                },
+              ]}
+            >
+              <Input className="rounded-none p-2 bg-formBG border border-[#ebedf9]" />
+            </Form.Item>
+            <Form.Item
+              name={"email"}
+              label="Email"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your email!",
+                },
+                {
+                  pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                  message: "Please enter a valid email address!",
+                },
+              ]}
+            >
+              <Input className="rounded-none p-2 bg-formBG border border-[#ebedf9]" />
+            </Form.Item>
+            <PhoneNumberInput name="phone" label={'Phone Number'} required={true} className="rounded-none p-2 bg-formBG border border-[#ebedf9]" />
+            <Form.Item
+              name={"password"}
+              label={"Password"}
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+                {
+                  validator: (_, value) => {
+                    if (value && value.length !== 6) {
+                      return Promise.reject("Password length must be 6 characters!");
+                    }
+                    return Promise.resolve();
+                  },
+                },
+              ]}
+            >
+              <Input.Password className="rounded-none p-2 bg-formBG border border-[#ebedf9]" />
+            </Form.Item>
+            <Form.Item
+              name={"confirm_password"}
+              label={"Retype Password"}
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the password again",
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error(
+                        
+                          "The new password that you entered do not match!"
+                        
+                      )
+                    );
+                  },
+                }),
+              ]}
+            >
+              <Input.Password className="rounded-none p-2 bg-formBG border border-[#ebedf9]" />
+            </Form.Item>
+            <button className="px-10 bg-green-400 py-3 rounded-3xl mb-5">
+              Continue
+            </button>
+            <div className="mb-5 flex justify-center items-center gap-2">
+              <Link href="/login"  className="text-gray2-200">
+              Already have an account?
+              </Link>
+              <Link href="/login" className="px-10 bg-orange-400 py-3 rounded-3xl">
+                Sign in now!
+              </Link>
+            </div>
+          </Form>
 
-      <div className="flex justify-center items-center mt-10">
-        <Form
-          layout="vertical"
-          onFinish={async (values) => {
-            if (!!values?.email) {
-              setEmail(values?.email);
-              const { error, msg, data } = await sendOtp({
-                email: values?.email,
-                action: "registration",
-              });
-              if (error) {
-                return message.error(msg);
-              } else {
-                setOtpModal(true);
-                values.role = values?.radio || "user";
-                setRegistrationValues(values);
-              }
-            }
-          }}
-          className="w-full"
-        >
-          <FormInput label="Name" name={"name"} />
-          <FormInput label="Email" name={"email"} />
-
-          {/* <FormInput label="Phone" name={"phone"} /> */}
-            <PhoneNumberInput label="Phone" name={"phone"} />
-          <FormInput label="Password" name={"password"} />
-          <FormInput label="confrom Password" name={"confirm_password"} />
-          <div className="flex justify-center items-center">
-            <PrimaryButton
-              text="Register"
-              className="px-10 bg-orange-400 py-3 rounded-3xl"
-            />
-          </div>
-        </Form>
-
-        <Modal
+          <Modal
             open={otpModal}
             onCancel={() => setOtpModal(false)}
             footer={null}
@@ -75,7 +177,7 @@ const Page = () => {
                 <p className="text-gray2-100 text-center">
                 OTP code send to this
                   <span className="text-primary"> {email} </span>
-                  email account.
+                 email account.
                 </p>
               </div>
               <Form
@@ -104,9 +206,23 @@ const Page = () => {
                       return message.error(msg);
                     } else {
                       setOtpModal(false);
-                      message.success(msg);
-                      router.push("/login");
+                      if (data?.role === "driver") {
+                        setLoadingRequest(false)
+                        router.push("/profile/driver");
+                        localStorage.setItem("token", data.token);
+                        message.success(msg);
+                      } else if (data?.role === "admin") {
+                        setLoadingRequest(false)
+                        router.push("/admin/profile");
+                        localStorage.setItem("token", data.token);
+                        message.success(msg);
+                      } else {
+                        setLoadingRequest(false)
+                        router.push("/details");
+                        localStorage.setItem("token", data.token);
                        
+                        message.success(msg);
+                      }
                     }
                   }
                 }}
@@ -144,20 +260,21 @@ const Page = () => {
                     </span>
                   ) : (
                     <span className="text-primary">
-                     Your OTP will expire in 
+                      Your OTP will expire in 
                       {time}s
                     </span>
                   )}
                 </p>
-                <button className="w-full text-black h-10 rounded-md mt-4 ">
-                Verify
+                <button className="px-10 bg-green-400 py-3 rounded-3xl mb-5">
+                  Verify
                 </button>
               </Form>
             </div>
           </Modal>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default CreateAccount;

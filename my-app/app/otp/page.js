@@ -19,6 +19,15 @@ const OTP = () => {
     timerType: "DECREMENTAL",
   });
 
+
+  useEffect(() => {
+    if (params.get("email"))
+ {
+      start();
+    }
+    if (time === 0) pause();
+  }, [time, start, pause, params.get("email")]);
+
   useEffect(() => {
     if (params.get("email")) {
       start();
@@ -85,7 +94,7 @@ const OTP = () => {
                 Your OTP has expired.{" "}
                 <span
                   onClick={handleResendOTP}
-                  className="text-primary underline font-bold cursor-pointer"
+                  className="px-10 bg-orange-400 py-3 rounded-3xl font-bold cursor-pointer"
                 >
                   Resend OTP
                 </span>
@@ -97,7 +106,7 @@ const OTP = () => {
                 </p>
               </div>
             )}
-            <button className=" w-full py-3 bg-primary text-black mb-5">
+            <button className=" w-full py-3px-10 bg-green-400 py-3 rounded-3xl mb-5mb-5">
             Verify OTP
             </button>
           </Form>

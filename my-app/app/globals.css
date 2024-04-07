@@ -330,7 +330,7 @@ select option:checked {
 }
 
 .form-input{
-  @apply px-14 py-2 border rounded-md w-full;
+  @apply  h-10 border rounded-md w-[31rem];
 }
 
 .gg input {

@@ -25,16 +25,16 @@ const Providers = ({ children }) => {
         }
     };
 
-    const [settings, getSettings] = useFetch(fetchSiteSettings)
+    // const [settings, getSettings] = useFetch(fetchSiteSettings)
 
     return (
-        <EnvContext.Provider value={settings}>
+        // <EnvContext.Provider value={settings}>
             <UserContext.Provider value={{ user, setUser, getUser }}>
                 <SkeletonTheme color="#0F172A" highlightColor="#444">
                     {children}
                 </SkeletonTheme>
             </UserContext.Provider>
-        </EnvContext.Provider>
+        // </EnvContext.Provider>
     )
 }
 

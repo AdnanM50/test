@@ -47,12 +47,14 @@ const Page = () => {
           </div>
         </Form>
       </div>
-        <div className="flex justify-between space-x-7">
+        <div className="flex justify-between mt-6  space-x-7">
 
         <Link href="/forgetpass">
-          <h1>Forget Password</h1>
+          <h1 className="hover:text-blue-500">Forget Password</h1>
         </Link>
-        <Link href="/register">sign up</Link>
+        <Link href="/register">
+          <h1 className="hover:text-blue-500">sign up</h1>
+        </Link>
         </div>
     </div>
   );
