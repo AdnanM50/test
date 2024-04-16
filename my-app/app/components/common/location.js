@@ -43,25 +43,7 @@ export const MapSelector = ({ value, onChange, country, height = 300 }) => {
         lng: -38.523
     })
 
-    useEffect(() => {
-        if (!!country) {
-            if (!value?.name) {
-                let geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ address: country }).then(({ results }) => {
-                    if (results?.length > 0) {
-                        onChange({
-                            name: '',
-                            lat: results[0]?.geometry?.location?.lat(),
-                            lng: results[0]?.geometry?.location?.lng(),
-                            country: results[0]?.address_components.find((c) => c.types.includes('country'))?.short_name,
-                            country_long: results[0]?.address_components.find((c) => c.types.includes('country'))?.long_name,
-                            city: results[0]?.address_components.find((c) => c.types.includes('locality'))?.long_name,
-                        })
-                    }
-                })
-            }
-        }
-    }, [country])
+
 
     useEffect(() => {
         if (!!value?.lat && !!value?.lng) {
@@ -76,35 +58,6 @@ export const MapSelector = ({ value, onChange, country, height = 300 }) => {
 
     const [autocomplete, setAutocomplete] = useState(null);
 
-
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                notification.error({
-                    title: 'Error',
-                    message: 'User denied the request for Geolocation.'
-                })
-                break;
-            case error.POSITION_UNAVAILABLE:
-                notification.error({
-                    title: 'Error',
-                    message: 'Location information is unavailable.'
-                })
-                break;
-            case error.TIMEOUT:
-                notification.error({
-                    title: 'Error',
-                    message: 'The request to get user location timed out.'
-                })
-                break;
-            case error.UNKNOWN_ERROR:
-                notification.error({
-                    title: 'Error',
-                    message: 'An unknown error occurred.'
-                })
-                break;
-        }
-    }
 
     const getLocation = location => {
         const geocoder = new google.maps.Geocoder();
@@ -151,27 +104,7 @@ export const MapSelector = ({ value, onChange, country, height = 300 }) => {
                         }}
                     />}
                 />
-                <MdOutlineMyLocation
-                    role="button"
-                    onClick={() => {
-                        if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition((position) => {
-                                let location = {
-                                    lat: position.coords.latitude,
-                                    lng: position.coords.longitude
-                                }
-                                getLocation(location)
-                            }, showError);
-                        } else {
-                            Notification.error({
-                                title: 'Error',
-                                message: 'Geolocation is not supported by this browser.'
-                            })
-                        }
-
-                    }}
-                    size={18}
-                    className="absolute top-1/3 right-3 transform -translate-y-1/2 text-gray-800" />
+    
             </div>
 
 
