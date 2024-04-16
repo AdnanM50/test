@@ -9,3 +9,4 @@ export const postVerifyOtp = (data) => post("/user/verify-otp", data);
 export const fetchUser=(data)=>get('/user',data);
 export const updateUser=(data)=>patchForm('/user',data);
 export const updatePassword=(data)=>post('/user/password',data);
+export const postRide=(data)=>post('/ride/request',data)

@@ -6,7 +6,7 @@ const Error404 = () => {
     <section>
       <div className="container">
         <div className="flex flex-col justify-center items-center my-20">
-          <p className="header_2">{i18n.t("Oops! That Page Doesnt Exist.")}</p>
+          <p className="header_2">Oops! That Page Doesnt Exist.</p>
           <div className="h-full mb-5">
             <img src="/404.png" alt="404"></img>
           </div>

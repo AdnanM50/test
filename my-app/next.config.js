@@ -6,7 +6,9 @@ module.exports = {
       process.env.NODE_ENV === "production"
         ? " https://car2goprobackend.appstick.com.bd/"
         : " https://car2goprobackend.appstick.com.bd/",
-    is_laravel_backend: 'false'
+    is_laravel_backend: 'false',
+    google_map_api_key: "AIzaSyDIkOy2b--fTHoMju1muXyYXR2r0GJtutU",
+
   },
   images: {
     domains: [
