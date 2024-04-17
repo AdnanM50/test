@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FaCar } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 
 const Layout = ({ children }) => {
@@ -66,6 +67,11 @@ const userMenu = [
     label: "Change Password",
     icon: <RiLockPasswordLine />,
     href: "/profile/driver/change-password",
+  },
+  {
+    label: "Vehicle",
+    href: "profile/driver/vehicle",
+    icon: <FaCar />,
   },
   {
     label: "Sign out",
