@@ -1,4 +1,5 @@
-import { get, patchForm, post } from "./api";
+import { data } from "autoprefixer";
+import { get, patchForm, post, postForm } from "./api";
 export const postRegister=(data)=>post('/user/registration',data);
 export const sendOtp=(data)=>post('/user/send-otp',data);
 export const verifyOTP=(data)=>post('/user/send-otp',data);
@@ -12,3 +13,4 @@ export const updatePassword=(data)=>post('/user/password',data);
 export const postRide=(data)=>post('/ride/request',data);
 export const fetchVehicleCategories=(data)=>get('/vehicle/elements',data);
 export const vehicleDetails=(data)=>get('/vehicle',data);
+export const postVehicle=(data)=>postForm('/vehicle',data);

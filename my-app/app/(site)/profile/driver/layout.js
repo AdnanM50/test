@@ -70,7 +70,7 @@ const userMenu = [
   },
   {
     label: "Vehicle",
-    href: "profile/driver/vehicle",
+    href: "/profile/driver/vehicle",
     icon: <FaCar />,
   },
   {

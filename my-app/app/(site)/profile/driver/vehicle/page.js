@@ -15,6 +15,13 @@ const Page = () => {
             <div className='mx-4'>
             <div className='flex justify-between'>
             <PageTitle title="Vehicle Categories"/>
+            <div>
+            <button 
+            className='cursor-pointer btn btn-success'
+            onClick={()=>{push('/profile/driver/vehicle/add') }}>
+              Add Vehicle
+            </button>
+            </div>
             {item && item?.subcategories && item?.subcategories.length > 0 &&
             <PageTitle title="Vehicles"/>
             }
