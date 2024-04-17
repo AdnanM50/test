@@ -6,7 +6,6 @@ import PhoneNumberInput from '../../form/phoneNumberInput';
 import FormInput from '../../form/input';
 import MultipleImageInput from '../../form/multiImage';
 import Button from '../../common/button';
-import { useI18n } from '@/app/providers/i18n';
 
 const AdminProfileEdit = ({ setEdit, user, getUser }) => {
     const [form] = Form.useForm();
@@ -56,7 +55,7 @@ const AdminProfileEdit = ({ setEdit, user, getUser }) => {
                     }
                 }>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
-                        <FormInput name="name" label={i18n.t("Name")} required />
+                        <FormInput name="name" label="Name" required />
                         <MultipleImageInput
                             name="image"
                             label={"Profile Picture"}
@@ -65,10 +64,10 @@ const AdminProfileEdit = ({ setEdit, user, getUser }) => {
                             style={{ backgroundColor: '#888AA0' }}
                             className="!bg-[#D2D2D2]"
                         />
-                        <FormInput name="email" label={i18n.t("Email")} readOnly style={{ backgroundColor: '#888AA0' }} className="!bg-[#D2D2D2]" />
-                        <PhoneNumberInput name="phone" label={i18n.t('Phone Number')} required={true} />
+                        <FormInput name="email" label="Email"readOnly style={{ backgroundColor: '#888AA0' }} className="!bg-[#D2D2D2]" />
+                        <PhoneNumberInput name="phone" label='Phone Number' required={true} />
                     </div>
-                    <Button variant="primary" className="mt-1">{i18n.t('Update')}</Button>
+                    <Button variant="primary" className="mt-1">'Update'</Button>
                 </Form>
             </div>
 

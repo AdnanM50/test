@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoCopySharp } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
-
+import { FaCar } from "react-icons/fa";
 const Layout = ({ children }) => {
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -36,6 +36,11 @@ const Layout = ({ children }) => {
       label: "Account Settings",
       href: "/profile/driver",
       icon: <SettingFilled />,
+    },
+    {
+      label:"New Ride",
+      href:"profile/user/take-ride",
+      icon:<FaCar/>
     },
    
     {
@@ -80,7 +85,11 @@ const userMenu = [
     href: "/profile/user",
     icon: <SettingFilled />,
   },
- 
+  {
+    label:"New Ride",
+    href:"profile/user/take-ride",
+    icon:<FaCar/>
+  },
   {
     label: "Change Password",
     icon: <RiLockPasswordLine />,

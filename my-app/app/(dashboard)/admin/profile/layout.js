@@ -1,5 +1,5 @@
 "use client"
-import ProfileBanner from '@/app/components/common/profile/profile_banner'
+import ProfileBanner from '@/app/components/admin/profile/profilebanner'
 import React, { useState } from 'react'
 
 const Layout = ({ children }) => {

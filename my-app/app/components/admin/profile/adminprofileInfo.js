@@ -1,11 +1,9 @@
 import { fetchUser } from '@/app/helpers/backend'
 import { useFetch } from '@/app/helpers/hooks'
-import { useI18n } from '@/app/providers/i18n'
 import React from 'react'
 
 const AdminProfileInformation = () => {
     const [user, getUser] = useFetch(fetchUser)
-    const i18n=useI18n()
 
     return (
         <div className='rounded-b-lg bg-white p-7 shadow-sm'>
@@ -18,20 +16,20 @@ const AdminProfileInformation = () => {
                 <div className="flex flex-col md:flex-row justify-between w-[400px] md:w-full  mt-5 sm:space-y-0 space-y-4">
                     <div className="flex flex-col gap-y-4">
                         <div className="flex flex-col">
-                            <p className="text-sm text-gray-700">{i18n.t("Name")}</p>
+                            <p className="text-sm text-gray-700">Name</p>
                             <p className="font-semibold">{user?.name}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col">
-                        <p className="text-sm text-gray-700">{i18n.t("Email")}</p>
+                        <p className="text-sm text-gray-700">Email</p>
                         <div className="flex gap-x-1 items-center">
                             <p className="font-semibold">{user?.email}</p>
 
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <p className="text-sm text-gray-700">{i18n.t("Phone")}</p>
+                        <p className="text-sm text-gray-700">Phone</p>
                         <div className="flex gap-x-2 items-center">
                             <p className="font-semibold">{user?.phone}</p>
                         </div>

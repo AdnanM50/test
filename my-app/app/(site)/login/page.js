@@ -22,7 +22,7 @@ const Login = () => {
       if (data?.role === "admin") {
         message.success(msg);
         localStorage.setItem("token", data.token);
-        router.push("/admin");
+        router.push("/admin/profile");
       }
       else if (data?.role === "driver") {
         localStorage.setItem("token", data.token);

@@ -5,10 +5,8 @@ import AdminProfileEdit from './adminprofileEdit';
 import AdminProfileInformation from './adminprofileInfo';
 import { useFetch } from '@/app/helpers/hooks';
 import { fetchUser } from '@/app/helpers/backend';
-import { useI18n } from '@/app/providers/i18n';
 
 const ProfileInfo = ({ children }) => {
-    const i18n = useI18n()
     const [edit, setEdit] = useState(false)
     const [user, getUser] = useFetch(fetchUser)
 
@@ -19,14 +17,14 @@ const ProfileInfo = ({ children }) => {
                     <span
                         role="button"
                         onClick={() => setEdit(false)}
-                        className={`font-semibold  cursor-pointer hover:text-primary ${!edit && 'text-primary'}`}>{i18n.t("My Profile")}</span>
+                        className={`font-semibold  cursor-pointer hover:text-primary ${!edit && 'text-primary'}`}>My Profile</span>
                     <span className="text-gray-500">|</span>
                     <a
                         role="button"
                         onClick={() => setEdit(true)}
                         className={`font-semibold uppercase flex hover:text-primary items-center ${edit && 'text-primary'}`}>
                         <FiEdit className="inline-block mr-1" />
-                        {i18n.t(" Edit profile")}
+                        Edit profile
                     </a>
                 </div>
             </div>

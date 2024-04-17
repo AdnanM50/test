@@ -5,7 +5,6 @@ import { Form, notification } from "antd";
 import { useEffect, useState } from "react";
 import { MdOutlineMyLocation } from "react-icons/md";
 
-// AIzaSyDzpDVyGnBQrQYTw9WIYWDgtJ5bhTUBbPg
 const LocationInput = ({ country, rules, className,name }) => {
     const { isLoaded: isGoogleMapLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -15,20 +14,19 @@ const LocationInput = ({ country, rules, className,name }) => {
     })
     return (
         <>
-            <Form.Item
-                name={name}
-                label="Address"
-                rules={rules}
-                className={`mb-5 ${className}`}
-                initialValue={{
-                    name: '',
-                    lat: '',
-                    lng: ''
-                }}
-            >
-                {isGoogleMapLoaded && <MapSelector country={country} />}
-            </Form.Item>
-
+        <Form.Item
+        name={name}
+        label="Address"
+        rules={rules}
+        className={`mb-5 ${className}`}
+        initialValue={{
+        name: '',
+        lat: '',
+        lng: ''
+        }}
+        >
+        {isGoogleMapLoaded && <MapSelector country={country} />}
+        </Form.Item>
         </>
     )
 }
@@ -59,41 +57,25 @@ export const MapSelector = ({ value, onChange, country, height = 300 }) => {
     const [autocomplete, setAutocomplete] = useState(null);
 
 
-    const getLocation = location => {
-        const geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ location }).then((response) => {
-            if (response.results[0]) {
-                onChange({
-                    name: response.results[0].formatted_address,
-                    lat: location.lat,
-                    lng: location.lng,
-                    country: response.results[0].address_components.find((c) => c.types.includes('country'))?.short_name,
-                    country_long: response.results[0].address_components.find((c) => c.types.includes('country'))?.long_name,
-                    city: response.results[0].address_components.find((c) => c.types.includes('locality'))?.long_name,
-                })
-            }
-        })
-    }
 
     return (
 
         <>
-
-            <div className="relative">
+       <div className="relative">
                 <Autocomplete
-                    onLoad={setAutocomplete}
-                    onPlaceChanged={() => {
-                        let addressObject = autocomplete.getPlace();
-                        onChange({
-                            name: addressObject.formatted_address,
-                            lat: addressObject.geometry.location.lat(),
-                            lng: addressObject.geometry.location.lng(),
-                            country: addressObject.address_components.find((c) => c.types.includes('country'))?.short_name,
-                            country_long: addressObject.address_components.find((c) => c.types.includes('country'))?.long_name,
-                            city: addressObject.address_components.find((c) => c.types.includes('locality'))?.long_name,
-                        })
-                    }}
-                    children={<input
+                onLoad={setAutocomplete}
+                onPlaceChanged={() => {
+                let addressObject = autocomplete.getPlace();
+                onChange({
+                name: addressObject.formatted_address,
+                lat: addressObject.geometry.location.lat(),
+                lng: addressObject.geometry.location.lng(),
+                country: addressObject.address_components.find((c) => c.types.includes('country'))?.short_name,
+                country_long: addressObject.address_components.find((c) => c.types.includes('country'))?.long_name,
+                city: addressObject.address_components.find((c) => c.types.includes('locality'))?.long_name,
+                 })
+                }}
+                children={<input
                         className="border w-full rounded-md h-10 pl-2 mb-4 !pr-10"
                         value={value?.name}
                         onChange={(e) => {
@@ -130,16 +112,13 @@ export const MapSelector = ({ value, onChange, country, height = 300 }) => {
                     }
                 }}
             >
-                {value?.lat && value?.lng && <Marker position={{
+                {value?.lat && value?.lng && <Marker 
+                position={{
                     lat: value?.lat,
                     lng: value?.lng
-                }} draggable={true} onDragEnd={(e) => {
-                    let location = {
-                        lat: e.latLng.lat(),
-                        lng: e.latLng.lng()
-                    }
-                    getLocation(location)
-                }} />}
+                }} 
+                draggable={true} 
+              />}
 
             </GoogleMap>
 

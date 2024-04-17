@@ -59,11 +59,7 @@ const Header = () => {
 
     return (
         <header className="header z-10">
-            {
-                defaultLang === undefined ?
-                    <>
-                    </>
-                    :
+           
                     <div className="flex justify-between items-center h-full p-4">
                         <div className="">
                             <FaBars
@@ -96,7 +92,7 @@ const Header = () => {
                             </Dropdown>
                         </div>
                     </div>
-            }
+           
         </header>
     )
 }
