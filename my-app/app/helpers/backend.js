@@ -11,3 +11,4 @@ export const updateUser=(data)=>patchForm('/user',data);
 export const updatePassword=(data)=>post('/user/password',data);
 export const postRide=(data)=>post('/ride/request',data);
 export const fetchVehicleCategories=(data)=>get('/vehicle/elements',data);
+export const vehicleDetails=(data)=>get('/vehicle',data);
