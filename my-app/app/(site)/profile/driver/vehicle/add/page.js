@@ -13,8 +13,8 @@ import Button from '@/app/components/common/button';
 const page = () => {
     const { push } = useRouter()
     const [form] = Form.useForm()
-    const [categories, getCategories] = useFetch(fetchVehicleCategories, {}, false)
-    const [data,getData,{loading}]=useFetch(vehicleDetails, {} , false)
+    const [categories, getCategories] = useFetch(fetchVehicleCategories, {})
+    const [data,getData,{loading}]=useFetch(vehicleDetails, {})
     const [ac,setAc]=useState(false);
     const [online,setOnline]=useState(false);
     const onFinish =async (values) => {
@@ -56,8 +56,9 @@ const page = () => {
         const {error,msg}=await postVehicle(values);
         if(!error){
             getData();
-            message.success(msg)
-            push('/profile/driver/vehicle');
+            message.success(msg);
+            window.location.href="/profile/driver/vehicle"
+            // push('/profile/driver/vehicle');
 
         }
         else{
