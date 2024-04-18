@@ -53,10 +53,11 @@ const page = () => {
         const {error,msg}=await postVehicle(values);
         if(!error){
             message.success(msg)
+            push('/profile/driver/vehicle');
+
         }
         else{
             message.error(error);
-            push('/profile/driver/vehicle');
         }
       }
 

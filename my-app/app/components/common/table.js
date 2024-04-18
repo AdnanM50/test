@@ -303,7 +303,7 @@ export const Table2 = ({
     )
 }
 
-export const DetailTable = ({ data, columns, title, actions }) => {
+export const DetailTable = ({ data, columns, title, actions , more}) => {
     return (
         <div className="bg-white shadow-md rounded-md p-4">
             {!!title && <div className="text-xl font-semibold mb-4">{title}</div>}
@@ -317,6 +317,7 @@ export const DetailTable = ({ data, columns, title, actions }) => {
                                     <td className="py-2 px-4 text-sm">{!!data ? !!column?.formatter ? column?.formatter(data[column.dataIndex], data) : data[column.dataIndex] : ''}</td>
                                 </tr>
                             ))}
+                            {more}
                         </tbody>
                     </table>
                 </div>

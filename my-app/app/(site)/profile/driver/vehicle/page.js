@@ -1,4 +1,5 @@
 "use client"
+import Button from '@/app/components/common/button';
 import { DetailTable } from '@/app/components/common/table';
 import PageTitle from '@/app/components/common/title';
 import FormSelect from '@/app/components/form/select';
@@ -70,8 +71,16 @@ const Page = () => {
         //     </div>
         //     </div>
         // </div>
-        <div>
+        <div className='mx-4'>
+        <div className='flex justify-between'>
         <PageTitle item="Vehicle Details" />
+        <div className=''>
+        <Button 
+        onClick={()=>{push(`/profile/driver/vehicle/edit/${vehicle?._id}`)}}>
+        Update Vehicle
+        </Button>
+        </div>
+        </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <DetailTable
@@ -88,11 +97,24 @@ const Page = () => {
                 {text:"fuel_type",dataIndex:"fuel_type"},
                 {text:"mileage",dataIndex:"mileage"},
                 {text:"gear_type",dataIndex:"gear_type"},
-                // {text:"ac",dataIndex:"ac"},
+                 // {text:"ac",dataIndex:"ac"},
                 {text:"vehicle_number",dataIndex:"vehicle_number"},
                 // {text:"online",dataIndex:"online"}
            ]}
-              data={vehicle} />
+              data={vehicle} 
+              more={(
+              <>
+              <tr className='border-b-2'>
+              <td className="py-2 px-4">AC</td>
+              <td className="py-2 px-4 text-sm ">{vehicle?.ac ? "Yes" : "N/A"}</td>
+              </tr>
+              <tr className='border-b-2'>
+              <td className="py-2 px-4">Online</td>
+              <td className="py-2 px-4 text-sm">{vehicle?.ac ? "Yes" : "N/A"}</td>
+              </tr>
+              </>
+              )}
+              />
           </div>
           <div>
             <div className="border rounded-md p-4 bg-white shadow-md">
@@ -115,7 +137,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="border rounded-md p-4 bg-white shadow-md">
+            <div className="border rounded-md p-4 bg-white shadow-md mt-4">
               <h6 className="title">Documents</h6>
               <div className="body mt-2">
                 <div className="text-center mb-3" style={{ height: 300 }}>

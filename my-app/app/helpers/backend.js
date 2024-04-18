@@ -14,3 +14,4 @@ export const postRide=(data)=>post('/ride/request',data);
 export const fetchVehicleCategories=(data)=>get('/vehicle/elements',data);
 export const vehicleDetails=(data)=>get('/vehicle',data);
 export const postVehicle=(data)=>postForm('/vehicle',data);
+export const patchVehicle=(data)=>patchForm('/vehicle',data);

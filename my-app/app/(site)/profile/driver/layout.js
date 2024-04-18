@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
                 <div className="container"> 
                  <div className="xl:py-[150px]  py-[20px]   flex xl:flex-row flex-col  gap-x-[24px]">
                   <TrainerSidebar title="driver" menu={userMenu} />
-                  <div className="xl:w-[872px]  h-auto w-full xl:border border-0  xl:border-1  xl:mt-0 md:pt-[40px] pt-[20px] mt-[20px]">
+                  <div className="xl:w-[872px] py-20 h-full w-full xl:border border-0  xl:border-1  xl:mt-0 md:pt-[40px] pt-[20px] mt-[20px]">
                     {children}
                   </div>
                   </div>
