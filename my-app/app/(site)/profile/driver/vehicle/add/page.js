@@ -58,8 +58,7 @@ const page = () => {
             message.error(error);
             push('/profile/driver/vehicle');
         }
-       
-    }
+      }
 
     return (
         <div className='mx-4'>

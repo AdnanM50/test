@@ -17,17 +17,18 @@ const page = ({ params }) => {
   
 
     return (
-        <div className='mt-4'>
-            <div className='flex justify-between items-center bg-white p-4 shadow-md border'>
+<div className='mt-4'>
+            {/* <div className='flex justify-between items-center bg-white p-4 shadow-md border'>
                 <PageTitle title="Vehicle Details"className="mx-2"/>
              </div>
-                  <Card className="rounded-lg">
+            <Card className="rounded-lg">
                         <div className="vehicle-details">
                             <ul className='md:text-lg py-1 font-semibold header_6'>
                             </ul>
                         </div>
-                    </Card>
-                     </div>
+            </Card> */}
+ 
+ </div>
     );
 };
 
