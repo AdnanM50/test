@@ -52,7 +52,7 @@ const EditVehicle = () => {
         }
         values.images = values?.image[0]?.originFileObj;
         values.documents = values?.image[0]?.originFileObj;
-        values.ac=ac && true
+        values.ac=ac ? true : false
         return useAction(
              postVehicle,
             {
@@ -65,7 +65,7 @@ const EditVehicle = () => {
     }
 
     return (
-        <div>
+        <div className='mx-4'>
                 <Form form={form} onFinish={onFinish} layout="vertical">
                     <div className='grid lg:grid-cols-2 grid-cols-1 gap-4'>
                         <FormInput name="name" label="Vehicle Name" required />
@@ -80,7 +80,7 @@ const EditVehicle = () => {
                                 }))}
                             />
                         )}
-                        <FormInput name="model" label="Vehicle Model" required />
+                        <FormInput name="model" label="Vehicle Model" required className="border border-2" />
                         <FormInput name="year" label="Vehicle Year" required />
                         <FormInput name="max_power" label="Max Power" required />
                         <FormInput name="max_speed" label="Max Speed" required />

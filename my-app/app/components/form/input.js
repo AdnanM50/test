@@ -11,7 +11,7 @@ const FormInput = ({ label, name, placeholder, required, isEmail, initialValue, 
         initRules.push({ type: 'email', message: 'Please enter a valid email address' })
     }
 
-    let input = <input className="form-input" type={type} onChange={onChange} placeholder={placeholder} readOnly={readOnly} />
+    let input = <input className="form-input border border-2 w-full p-1" type={type} onChange={onChange} placeholder={placeholder} readOnly={readOnly} />
     textArea && (input = <textarea className="form-input" />)
     type === 'date' && (input = <DatePicker />)
 

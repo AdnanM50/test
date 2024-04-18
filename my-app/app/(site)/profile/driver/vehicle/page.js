@@ -21,10 +21,11 @@ const Page = () => {
             onClick={()=>{push('/profile/driver/vehicle/add') }}>
               Add Vehicle
             </button>
-            </div>
             {item && item?.subcategories && item?.subcategories.length > 0 &&
             <PageTitle title="Vehicles"/>
             }
+            </div>
+
            </div> 
             <div className='flex justify-between'>
             <div className='md:w-[50%] w-full'>
