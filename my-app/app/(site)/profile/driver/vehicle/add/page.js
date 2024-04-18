@@ -10,7 +10,7 @@ import FormSelect from '@/app/components/form/select';
 import MultipleImageInput from '@/app/components/form/multiImage';
 import Button from '@/app/components/common/button';
 
-const EditVehicle = () => {
+const page = () => {
     const { push } = useRouter()
     const [form] = Form.useForm()
     const [categories, getCategories] = useFetch(fetchVehicleCategories)
@@ -108,4 +108,4 @@ const EditVehicle = () => {
     );
 };
 
-export default EditVehicle;
+export default page;
