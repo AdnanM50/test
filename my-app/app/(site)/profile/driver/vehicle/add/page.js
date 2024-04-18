@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import PageTitle from '../../../../../components/common/title';
-import { Card, Checkbox, Form, Switch } from 'antd';
+import { Card, Checkbox, Form, Switch, message } from 'antd';
 import { useAction, useFetch } from '../../../../../helpers/hooks';
 import { useRouter } from 'next/navigation';
 import { fetchVehicleCategories, postVehicle } from '@/app/helpers/backend';
@@ -15,10 +15,7 @@ const page = () => {
     const [form] = Form.useForm()
     const [categories, getCategories] = useFetch(fetchVehicleCategories)
     const [ac,setAc]=useState(false)
-   
-    
-
-    const onFinish = (values) => {
+    const onFinish =async (values) => {
         console.log(values)
         const imgArray = [];
         let docArray = [];
@@ -50,18 +47,26 @@ const page = () => {
         if (preDoc?.length > 0) {
             values.documents = preDoc;
         }
-        values.images = values?.image[0]?.originFileObj;
-        values.documents = values?.image[0]?.originFileObj;
+        // values.images = values?.image[0]?.originFileObj;
+        // values.documents = values?.image[0]?.originFileObj;
         values.ac=ac ? true : false
-        return useAction(
-             postVehicle,
-            {
-                ...values,
-            },
-            () => {
-                push('/driver/vehicle')
-            }
-        );
+        const {error,msg}=await postVehicle(values);
+        if(!error){
+            message.success(msg)
+        }
+        else{
+            message.error(error);
+            push('/profile/driver/vehicle');
+        }
+        // return useAction(
+        //      postVehicle,
+        //     {
+        //         ...values,
+        //     },
+        //     () => {
+        //         push('/driver/vehicle')
+        //     }
+        // );
     }
 
     return (
@@ -98,9 +103,9 @@ const page = () => {
                            AC
                         </Checkbox>
                         <MultipleImageInput name="documents" label="Documents"max={4} />
-                        <MultipleImageInput name="documents" label="Document" max={1}/>
+                        {/* <MultipleImageInput name="documents" label="Document" max={1}/> */}
                         <MultipleImageInput name="images" label="Images" max={4}/>
-                        <MultipleImageInput name="images" label="Image" max={1}/>
+                        {/* <MultipleImageInput name="images" label="Image" max={1}/> */}
                     </div>
                     <Button type="primary" htmlType="submit">Add Vehicle</Button>
                 </Form>
