@@ -58,15 +58,7 @@ const page = () => {
             message.error(error);
             push('/profile/driver/vehicle');
         }
-        // return useAction(
-        //      postVehicle,
-        //     {
-        //         ...values,
-        //     },
-        //     () => {
-        //         push('/driver/vehicle')
-        //     }
-        // );
+       
     }
 
     return (
@@ -86,15 +78,28 @@ const page = () => {
                             />
                         )}
                         <FormInput name="model" label="Vehicle Model" required className="border border-2" />
-                        <FormInput name="year" label="Vehicle Year" required />
+                        <FormInput name="year" label="Vehicle Year"  required />
                         <FormInput name="max_power" label="Max Power" required />
                         <FormInput name="max_speed" label="Max Speed" required />
-                        <FormInput name="capacity" label="Capacity" required />
+                        <FormInput name="capacity" label="Capacity"  type="number" required />
                         <FormInput name="color" label="Color" required />
                         <FormInput name="fuel_type" label="Fuel Type" required />
-                        <FormInput name="mileage" label="Mileage" required />
-                        <FormInput name="gear_type" label="Gear Type" required />
-                        <FormInput name="vehicle_number" label="Vehicle Number" required />
+                        <FormInput name="mileage" type="number" label="Mileage" required />
+                        <FormSelect
+                                label="Gear_type"
+                                name="gear_type"
+                                initialValue=""
+                                options={[{
+                                    label: "automatic",
+                                    value: "automatic",
+                                },
+                                {
+                                    label: "manual",
+                                    value: "manual",
+                                }]
+                            }
+                            />
+                        <FormInput name="vehicle_number" label="Vehicle Number"  type="number" required />
                         <Checkbox 
                         onChange={(e) => {
                             console.log(`checked = ${e.target.checked}`);
