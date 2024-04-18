@@ -7,13 +7,13 @@ import FormInput, { HiddenInput } from '@/app/components/form/input';
 import FormSelect from '@/app/components/form/select';
 import MultipleImageInput from '@/app/components/form/multiImage';
 import Button from '@/app/components/common/button';
-import { useFetch } from '@/app/helpers/hooks';
+import { useAction, useFetch } from '@/app/helpers/hooks';
 
 const page = ({params}) => {
     const { push } = useRouter()
     const [form] = Form.useForm()
     const [categories, getCategories] = useFetch(fetchVehicleCategories);
-    const [data,getData, {loading}]=useFetch(vehicleDetails);
+    const [data,getData, {loading}]=useFetch(vehicleDetails,{});
     const [ac,setAc]=useState(false);
     const [online,setOnline]=useState(false);
 
@@ -79,12 +79,23 @@ const page = ({params}) => {
         }
         // values.images = values?.image[0]?.originFileObj;
         // values.documents = values?.image[0]?.originFileObj;
-        values.ac=ac ? true : false
+        values.ac=ac ? true : false;
+        values.online=online ? true : false;
+        // return useAction( patchVehicle,
+        //     {
+        //       ...values,
+        //     },
+        //     () => {
+        //       push("/admin/product/product-list");
+        //     },
+        //     reload={getData}
+        // )
         const {error,msg}=await patchVehicle(values);
         if(!error){
+            getData()
             message.success(msg)
             push('/profile/driver/vehicle');
-
+            
         }
         else{
             message.error(error);

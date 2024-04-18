@@ -11,7 +11,7 @@ import React, { useEffect, useState } from 'react';
 
 const Page = () => {
     const [data, getData, { loading }] = useFetch(fetchVehicleCategories);
-    const [vehicle,getVehicle,{load}] =useFetch(vehicleDetails);
+    const [vehicle,getVehicle,{load}] =useFetch(vehicleDetails,{},false);
     const {user}=useUser()
     useEffect(()=>{
     getVehicle({_id:user?.vehicle?._id})

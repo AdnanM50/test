@@ -4,7 +4,7 @@ import PageTitle from '../../../../../components/common/title';
 import { Card, Checkbox, Form, Switch, message } from 'antd';
 import { useAction, useFetch } from '../../../../../helpers/hooks';
 import { useRouter } from 'next/navigation';
-import { fetchVehicleCategories, postVehicle } from '@/app/helpers/backend';
+import { fetchVehicleCategories, postVehicle, vehicleDetails } from '@/app/helpers/backend';
 import FormInput from '@/app/components/form/input';
 import FormSelect from '@/app/components/form/select';
 import MultipleImageInput from '@/app/components/form/multiImage';
@@ -13,8 +13,10 @@ import Button from '@/app/components/common/button';
 const page = () => {
     const { push } = useRouter()
     const [form] = Form.useForm()
-    const [categories, getCategories] = useFetch(fetchVehicleCategories)
-    const [ac,setAc]=useState(false)
+    const [categories, getCategories] = useFetch(fetchVehicleCategories, {}, false)
+    const [data,getData,{loading}]=useFetch(vehicleDetails, {} , false)
+    const [ac,setAc]=useState(false);
+    const [online,setOnline]=useState(false);
     const onFinish =async (values) => {
         console.log(values)
         const imgArray = [];
@@ -49,9 +51,11 @@ const page = () => {
         }
         // values.images = values?.image[0]?.originFileObj;
         // values.documents = values?.image[0]?.originFileObj;
-        values.ac=ac ? true : false
+        values.ac=ac ? true : false;
+        values.online=online ? true : false;
         const {error,msg}=await postVehicle(values);
         if(!error){
+            getData();
             message.success(msg)
             push('/profile/driver/vehicle');
 
@@ -106,6 +110,13 @@ const page = () => {
                             setAc(e.target.checked)
                           }}>
                            AC
+                        </Checkbox>
+                        <Checkbox 
+                        onChange={(e) => {
+                            console.log(`checked = ${e.target.checked}`);
+                            setOnline(e.target.checked)
+                          }}>
+                           Online
                         </Checkbox>
                         <MultipleImageInput name="documents" label="Documents"max={4} />
                         {/* <MultipleImageInput name="documents" label="Document" max={1}/> */}
