@@ -77,19 +77,10 @@ const page = ({params}) => {
         if (preDoc?.length > 0) {
             values.documents = preDoc;
         }
-        // values.images = values?.image[0]?.originFileObj;
-        // values.documents = values?.image[0]?.originFileObj;
+      
         values.ac=ac ? true : false;
         values.online=online ? true : false;
-        // return useAction( patchVehicle,
-        //     {
-        //       ...values,
-        //     },
-        //     () => {
-        //       push("/admin/product/product-list");
-        //     },
-        //     reload={getData}
-        // )
+        
         const {error,msg}=await patchVehicle(values);
         if(!error){
             getData()
