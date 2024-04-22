@@ -8,7 +8,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const GeneralForm = () => {
  const { Option } = Select;
-
+ 
   return (
     <div >
        <Form layout="vertical" >
@@ -261,7 +261,7 @@ const GeneralForm = () => {
           <Input placeholder="Enter product price" className="p-2"/>
         </Form.Item>
         <div className=" pb-2  lg:col-span-2  mb-4">Set Quantity Based Price (Optional)</div>
-      <Form.List name="price_base">
+        <Form.List name="price_base">
       {(fields, { add, remove }) => (
         <>
           <Form.Item>
@@ -330,8 +330,56 @@ const GeneralForm = () => {
         </div>
         </>
       )}
-    </Form.List>
-    </div>
+       </Form.List>
+        <div className="font-bold pb-2 border-b-[1px] border-blue-600 lg:col-span-2  mb-6">Product Discount</div>
+        <Form.Item
+              name={`coupon`}
+              label={`Add Coupons`}
+              className="lg:col-span-2"
+             
+            > 
+              <Select placeholder="Coupon"
+>             <Option value="1">admin winter coupon - 10%</Option>
+             </Select>
+        </Form.Item>
+        <Form.Item
+          name="discount_value"
+          label="Discount Value"
+          className="w-full"
+          required
+          rules={[
+            {
+              required: true,
+              message: "Please input your discount!",
+            },
+          ]}
+        >
+          <Input placeholder="Enter discount value" className="p-2"/>
+        </Form.Item>
+        <Form.Item
+              name={`discount_type`}
+              label={`Discount Type`}
+              rules={[
+                {
+                  required: true,
+                  message: 'please select your  discount type',
+                },
+              ]}
+            > 
+              <Select placeholder="Enter discount type"
+>             <Option value="1">Percentage</Option>
+              <Option value="2">Flat</Option>
+             </Select>
+        </Form.Item>
+        <Form.Item
+              name={`start_date`}
+              label={`Discount Price Start Date`}> 
+       </Form.Item>
+       <Form.Item
+              name={`end_date`}
+              label={`Discount Price End Date`}> 
+       </Form.Item>
+        </div>
       </Form>
     </div>
   );
