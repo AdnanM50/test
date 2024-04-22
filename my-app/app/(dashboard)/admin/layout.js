@@ -52,6 +52,13 @@ const menu = [
     menu: "Menu",
   },
   {
+    label:"Product",
+    href:"/admin/product",
+    icon: <BiCategory />,
+
+
+  },
+  {
     label: "Dashboard",
     href: "/admin",
     icon: <MdOutlineSpaceDashboard />,
