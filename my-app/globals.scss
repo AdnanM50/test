@@ -341,3 +341,20 @@ select option:checked {
 .mobile-menu > .ant-menu-item-selected {
   background-color: none !important;
 }
+.responsive-space {
+  grid-template-columns: repeat(1, 1fr); /* Two columns on smaller screens */
+}
+
+@media (min-width: 768px) {
+  .responsive-space {
+    grid-template-columns: repeat(1, 1fr); /* Three columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-space {
+    grid-template-columns: repeat(3, 1fr); /* Four columns on large screens */
+  }
+}
+
+/* Add more media queries as needed for different screen sizes */
