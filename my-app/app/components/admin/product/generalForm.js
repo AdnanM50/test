@@ -15,12 +15,12 @@ const GeneralForm = () => {
   const [d_type, setD_type] = useState(null);
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleRadioChange = (e) => {
-    setSelectedValue(e.target.value);
+  const handleFinish = (value) => {
+    console.log(value);
   };
   return (
     <div>
-      <Form layout="vertical">
+      <Form layout="vertical" onFinish={handleFinish}>
         <div className="grid lg:grid-cols-2 grid-cols-1  lg:gap-x-4">
           <Form.Item
             name="Product"
@@ -522,9 +522,14 @@ const GeneralForm = () => {
           )}
           {/* <MultipleImageInput name="Image" /> */}
         </div>
-        <button className="bg-emerald-500 text-white px-[18px] py-2 rounded">
-          Submit
-        </button>
+        <Form.Item>
+          <button
+            type="submit" // <-- Set type to "submit"
+            className="bg-emerald-500 text-white px-[18px] py-2 rounded"
+          >
+            Submit
+          </button>
+        </Form.Item>
       </Form>
     </div>
   );
