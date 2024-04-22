@@ -45,9 +45,11 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
     setPreviewImage(file.url || file.preview);
     setPreviewVisible(true);
   };
-
+  const [thumb,setThumb]=useState('')
   const handleChange = ({ fileList }) => {
     onChange(fileList);
+    console.log(fileList)
+    setThumb(fileList[0].thumbUrl)
   };
 
   return (
@@ -60,10 +62,13 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
         onPreview={handlePreview}
         fileList={value || []}
         onChange={handleChange}
+        openFileDialogOnClick={true}
+       
         maxCount={max}
       >
         {(value?.length || 0) < max && "+ upload"}
       </Upload>
+      <img src={previewImage} alt="image" />
       <Modal
         open={previewVisible}
         footer={null}

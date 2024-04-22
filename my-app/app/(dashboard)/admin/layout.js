@@ -57,35 +57,35 @@ const menu = [
     icon: <BiCategory />,
 
 
-  },
-  {
-    label: "Dashboard",
-    href: "/admin",
-    icon: <MdOutlineSpaceDashboard />,
-  },
-  {
-    label: "Users",
-    href: "/admin/users",
-    icon: <FaUsers />,
-  },
-  {
-    label: "Gallery",
-    href: "/admin/gallery",
-    icon: <GrGallery />,
-  },
-  {
-    menu: "Product",
-  },
-  {
-    label: "Category",
-    href: "/admin/product/category",
-    icon: <BiCategory />,
-  },
-  {
-    label: "Product List",
-    href: "/admin/product/product-list",
-    icon: <BiCategory />,
-  },
+  }
+  // {
+  //   label: "Dashboard",
+  //   href: "/admin",
+  //   icon: <MdOutlineSpaceDashboard />,
+  // },
+  // {
+  //   label: "Users",
+  //   href: "/admin/users",
+  //   icon: <FaUsers />,
+  // },
+  // {
+  //   label: "Gallery",
+  //   href: "/admin/gallery",
+  //   icon: <GrGallery />,
+  // },
+  // {
+  //   menu: "Product",
+  // },
+  // {
+  //   label: "Category",
+  //   href: "/admin/product/category",
+  //   icon: <BiCategory />,
+  // },
+  // {
+  //   label: "Product List",
+  //   href: "/admin/product/product-list",
+  //   icon: <BiCategory />,
+  // },
 
 
  
