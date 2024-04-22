@@ -7,6 +7,7 @@ import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import { BsPlusCircleDotted } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
 import MultipleImageInput from "../../form/multiImage";
+import TextEditor from "../../form/editor";
 
 const GeneralForm = () => {
   const { Option } = Select;
@@ -18,6 +19,7 @@ const GeneralForm = () => {
   const handleFinish = (value) => {
     console.log(value);
   };
+
   return (
     <div>
       <Form layout="vertical" onFinish={handleFinish}>
@@ -522,6 +524,8 @@ const GeneralForm = () => {
           )}
           {/* <MultipleImageInput name="Image" /> */}
         </div>
+      
+
         <Form.Item>
           <button
             type="submit" // <-- Set type to "submit"

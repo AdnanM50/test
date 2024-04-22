@@ -1,4 +1,5 @@
 "use client";
+import Description from "@/app/components/admin/product/description";
 import GeneralForm from "@/app/components/admin/product/generalForm";
 import { Card } from "antd";
 import React, { useState } from "react";
@@ -35,6 +36,9 @@ const page = () => {
       <Card>
         {
             tag === "general" && <GeneralForm/>
+        }
+        {
+            tag === "descriptions" && <Description/>
         }
       </Card>
     </div>
