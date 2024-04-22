@@ -53,7 +53,7 @@ const Header = () => {
       ) : (
         <div>
           <Menu.Item key="4">
-            <Link href="/admin"> Dashboard</Link>
+            <Link href="/admin/profile"> Dashboard</Link>
           </Menu.Item>
           <Menu.Item key="5">
             <p onClick={handleLogOut}>Logout</p>

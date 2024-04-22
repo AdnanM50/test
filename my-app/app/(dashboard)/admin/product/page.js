@@ -1,6 +1,10 @@
 "use client";
 import Description from "@/app/components/admin/product/description";
+import Feature from "@/app/components/admin/product/feature";
 import GeneralForm from "@/app/components/admin/product/generalForm";
+import Image from "@/app/components/admin/product/image";
+import Shipping from "@/app/components/admin/product/shipping";
+import Status from "@/app/components/admin/product/status";
 import { Card } from "antd";
 import React, { useState } from "react";
 const page = () => {
@@ -34,12 +38,12 @@ const page = () => {
         </div>
       </div>
       <Card>
-        {
-            tag === "general" && <GeneralForm/>
-        }
-        {
-            tag === "descriptions" && <Description/>
-        }
+        {tag === "general" && <GeneralForm />}
+        {tag === "descriptions" && <Description />}
+        {tag === "images" && <Image />}
+        {tag === "status" && <Status />}
+        {tag === "shipping information" && <Shipping/>}
+        {tag === "product features" && <Feature/>}
       </Card>
     </div>
   );

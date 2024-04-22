@@ -23,7 +23,7 @@ const GeneralForm = () => {
   return (
     <div>
       <Form layout="vertical" onFinish={handleFinish}>
-        <div className="grid lg:grid-cols-2 grid-cols-1  lg:gap-x-4">
+    <div className="grid lg:grid-cols-2 grid-cols-1  lg:gap-x-4">
           <Form.Item
             name="Product"
             label="Product Name"

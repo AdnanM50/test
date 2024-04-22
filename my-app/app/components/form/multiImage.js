@@ -68,7 +68,7 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
       >
         {(value?.length || 0) < max && "+ upload"}
       </Upload>
-      <img src={previewImage} alt="image" />
+      {/* <img src={previewImage} alt="image" /> */}
       <Modal
         open={previewVisible}
         footer={null}
