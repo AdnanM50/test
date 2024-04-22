@@ -43,7 +43,7 @@ const GeneralForm = () => {
             }
          ]}
         />
-          <div className="relative">
+          <div className="relative md:py-0 py-2">
           <Form.Item
               name={`brand`}
               label={`Brand Name`}
@@ -65,7 +65,7 @@ const GeneralForm = () => {
               <Option value="8">Apple</Option>
               </Select>
           </Form.Item>
-          <div className="absolute top-0 right-0">
+          <div className="absolute md:top-0 md:my-0 right-0 bottom-0 ">
           <span>Add New Brand : <Link href="#"className="text-blue-600 underline">click here</Link></span>
           </div>
           </div>
@@ -82,7 +82,7 @@ const GeneralForm = () => {
         >
           <Input placeholder="Product Model" className="p-2"/>
         </Form.Item>
-        {/* <div className="lg:col-span-2  grid lg:grid-cols-3 grid-cols-1 gap-x-4">
+        <div className="lg:col-span-2  grid lg:grid-cols-3 grid-cols-1 gap-x-4">
         <Form.Item
               name={`category`}
               label={`Category`}
@@ -146,7 +146,7 @@ const GeneralForm = () => {
               <Option value="8">Apple</Option>
               </Select>
         </Form.Item>
-        </div> */}
+        </div>
         <Form.Item
               name={`unit`}
               label={`Product Unit`}
