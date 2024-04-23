@@ -50,10 +50,15 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
   const handleChange = ({ fileList }) => {
     onChange(fileList);
   };
-
+ 
+  
   return (
     <div>
-      <ImgCrop rotationSlider>
+        <ImgCrop 
+        rotationSlider={true} 
+        aspectSlider
+        beforeCrop={true}
+        >
         <Upload
           accept={`image/png, image/gif, image/jpeg, ${
             !noWebp && "image/webp"
