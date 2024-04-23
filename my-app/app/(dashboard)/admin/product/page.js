@@ -42,9 +42,15 @@ const page = () => {
         {tag === "descriptions" && <Description />}
         {tag === "images" && <Image />}
         {tag === "status" && <Status />}
-        {tag === "shipping information" && <Shipping/>}
-        {tag === "product features" && <Feature/>}
+        {tag === "shipping information" && <Shipping />}
+        {tag === "product features" && <Feature />}
       </Card>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+        <button className="bg-blue-500 text-white h-12 w-24">Previous</button>
+        <button className="bg-blue-500 text-white h-12 w-24">Next</button>
+      </div>
+      </div>
     </div>
   );
 };
