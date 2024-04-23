@@ -34,7 +34,9 @@ const MultipleImageInput = (props) => {
 const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
   const [previewVisible, setPreviewVisible] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
+  const [previewImage2, setPreviewImage2] = useState("");
 
+  const [images,setImage]=useState(false);
   const handleCancel = () => setPreviewVisible(false);
 
   const handlePreview = async (file) => {
@@ -46,11 +48,17 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
     setPreviewVisible(true);
   };
   const [thumb,setThumb]=useState('')
-  const handleChange = ({ fileList }) => {
-    onChange(fileList);
-    console.log(fileList)
-    setThumb(fileList[0].thumbUrl)
+  const handleChange = async (data) => {
+    if (!data?.file?.url && !data?.file?.preview) {
+      const preview = await getBase64(data?.file?.originFileObj);
+      data = { ...data, file: { ...data.file, preview } }; // Create a new object with the modified preview property
+    }
+  
+    setPreviewImage2(data?.file?.url || data?.file?.preview);
+    console.log("handleChange", data);
+    setImage(true);
   };
+  
 
   return (
     <>
@@ -84,6 +92,22 @@ const Input = ({ value, onChange, listType, max, noWebp, pdf }) => {
           />
         ) : (
           <img alt="example" style={{ width: "100%" }} src={previewImage} />
+        )}
+      </Modal>
+      <Modal   
+        open={images}
+        footer={null}
+        onCancel={()=>{setImage(false)}}
+        title={"Edit Image"}>
+  {previewImage2.endsWith(".pdf") ? (
+          <embed
+            src={previewImage2}
+            type="application/pdf"
+            width="100%"
+            height="600px"
+          />
+        ) : (
+          <img alt="edit image" style={{ width: "100%" }} src={previewImage2} />
         )}
       </Modal>
     </>
