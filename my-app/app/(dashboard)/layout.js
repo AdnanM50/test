@@ -1,5 +1,6 @@
 import './styles/app.scss'
 import Providers from "../providers/userProvider";
+import TabUser from '../contexts/tabContext';
 
 export const metadata = {
     title: "Car2Go",
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                     <Providers>
+                        <TabUser>
                         {children}
+                        </TabUser>
                     </Providers>
             </body>
         </html>

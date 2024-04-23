@@ -1,8 +1,11 @@
+import { tabbar } from "@/app/contexts/tabContext";
 import { Switch } from "antd";
 import Form from "antd/es/form/Form";
-import React from "react";
+import React, { useContext } from "react";
 
 const Status = () => {
+  const {tab,setTab}=useContext(tabbar)
+
   return (
     <div>
       <Form
@@ -91,7 +94,12 @@ const Status = () => {
           </button>
         </Form.Item>
       </Form>
-     
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('product features')}}>Previous</button>
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('images')}}>Next</button>
+      </div>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,10 @@
+import { tabbar } from "@/app/contexts/tabContext";
 import { Form, Input } from "antd";
-import React from "react";
+import React, { useContext } from "react";
 
 const Shipping = () => {
+  const {tab,setTab}=useContext(tabbar)
+
   return (
     <div>
       <Form
@@ -49,6 +52,11 @@ const Shipping = () => {
           </button>
         </Form.Item>
       </Form>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('images')}}>Previous</button>
+      </div>
+      </div>
     </div>
   );
 };

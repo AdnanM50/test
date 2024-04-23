@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import TextEditor from "../../form/editor";
 import { Form } from "antd";
+import { tabbar } from "@/app/contexts/tabContext";
 
 const Description = () => {
+  const {tab,setTab}=useContext(tabbar)
+
     const handleFinish=(value)=>{
         console.log(value);
     }
@@ -24,6 +27,12 @@ const Description = () => {
           </button>
         </Form.Item>
       </Form>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('general')}}>Previous</button>
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('product features')}}>Next</button>
+      </div>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 import { Button, DatePicker, Form, Input, Radio, Select, Space } from "antd";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FormSelect from "../../form/select";
 import Link from "next/link";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
@@ -8,6 +8,7 @@ import { BsPlusCircleDotted } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
 import MultipleImageInput from "../../form/multiImage";
 import TextEditor from "../../form/editor";
+import { tabbar } from "@/app/contexts/tabContext";
 
 const GeneralForm = () => {
   const { Option } = Select;
@@ -19,6 +20,8 @@ const GeneralForm = () => {
   const handleFinish = (value) => {
     console.log(value);
   };
+  const {tab,setTab}=useContext(tabbar)
+  console.log("tab",tab);
 
   return (
     <div>
@@ -535,6 +538,12 @@ const GeneralForm = () => {
           </button>
         </Form.Item>
       </Form>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       {/* <button className="bg-purple-500 text-white h-12 w-24">Previous</button> */}
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('descriptions')}}>Next</button>
+      </div>
+      </div>
     </div>
   );
 };

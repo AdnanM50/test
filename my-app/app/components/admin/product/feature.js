@@ -1,9 +1,12 @@
 import { Button, Form, Input ,Space} from "antd";
-import React from "react";
+import React, { useContext } from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
+import { tabbar } from "@/app/contexts/tabContext";
 
 const Feature = () => {
+  const {tab,setTab}=useContext(tabbar)
+
   return (
     <div>
       <Form
@@ -86,6 +89,12 @@ const Feature = () => {
           )}
         </Form.List>
       </Form>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('descriptions')}}>Previous</button>
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('status')}}>Next</button>
+      </div>
+      </div>
     </div>
   );
 };

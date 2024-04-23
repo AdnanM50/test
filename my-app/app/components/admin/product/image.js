@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import MultipleImageInput from "../../form/multiImage";
 import { Form } from "antd";
+import { tabbar } from "@/app/contexts/tabContext";
 
 const Image = () => {
+  const {tab,setTab}=useContext(tabbar)
+
   return (
     <div>
       <Form
@@ -23,6 +26,12 @@ const Image = () => {
           </button>
         </Form.Item>
       </Form>
+      <div className="flex justify-end">
+      <div className="flex gap-x-4 items-center">
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('status')}}>Previous</button>
+       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('shipping information')}}>Next</button>
+      </div>
+      </div>
     </div>
   );
 };
