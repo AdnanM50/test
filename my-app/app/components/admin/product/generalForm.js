@@ -525,7 +525,6 @@ const GeneralForm = () => {
               </Select>
             </Form.Item>
           )}
-          {/* <MultipleImageInput name="Image" /> */}
         </div>
       
 

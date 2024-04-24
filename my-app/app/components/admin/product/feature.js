@@ -37,14 +37,14 @@ const Feature = () => {
         <Form.List name="specfic">
           {(fields, { add, remove }) => (
             <>
-              <div className=" ">
+              <div className="grid grid-cols-1 ">
                 {fields.map(({ key, name, ...restField }) => (
-                  <Space key={key} align="baseline">
-                    <div className="grid grid-cols-1">
+                  <Space key={key} align="baseline"style={{display:"block"}}>
+                    <div className="grid grid-cols-12 gap-x-2  align-self-center  w-full">
+                      <div className="col-span-6">
                       <Form.Item
                         {...restField}
                         name={[name, "specific_name"]}
-                        className="lg:w-[80%] w-full"
                         rules={[
                           {
                             required: true,
@@ -54,6 +54,8 @@ const Feature = () => {
                       >
                         <Input placeholder="Enter the product specific name" />
                       </Form.Item>
+                      </div>
+                      <div className="col-span-5">
                       <Form.Item
                         {...restField}
                         name={[name, "specific_value"]}
@@ -67,11 +69,15 @@ const Feature = () => {
                       >
                         <Input placeholder="Enter the product specific name" />
                       </Form.Item>
+                      </div>
+                      <div className="col-span-1  mt-2">
                       <AiOutlineDelete
+                        size={36}
                         style={{ color: "red" }}
                         size={14}
                         onClick={() => remove(name)}
                       />
+                    </div>
                     </div>
                   </Space>
                 ))}
