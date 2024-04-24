@@ -9,7 +9,8 @@ import client from "../../public/client.png";
 import Image from "next/image";
 const Page = () => {
   return (
-    <div className="max-w-[1320px] mx-auto bg-red-300 py-20 swipe_slide">
+    <div className="bg-[#e3e3e3]">
+    <div className="max-w-[1320px] mx-auto lg:px-0 p-2  py-20 swipe_slide">
       <div className="flex lg:flex-row flex-col justify-between lg:items-end items-center ">
         <div>
           <h1 className="lg:text-[50px] text-[32px] text-[#0F0F0F] font-bold lg:text-start text-center">
@@ -19,8 +20,8 @@ const Page = () => {
             This can be detailed description or just a short text.
           </p>
         </div>
-        <div>
-          <button className="px-[24px] py-[16px] bg-[#F8991F] text-white rounded lg:mt-0 mt-4 lg:mx-0 mx-4">
+        <div className="lg:block hidden">
+          <button className=" px-[24px] py-[16px] bg-[#F8991F] text-white rounded lg:mt-0 mt-4 lg:mx-0 mx-8">
             See More
           </button>
         </div>
@@ -47,7 +48,7 @@ const Page = () => {
         bulletActiveClass='swiper-pagination-bullet-active'
       >
         <SwiperSlide>
-          <div className="bg-white p-[36px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
+          <div className="bg-white md:p-[36px] p-[15px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -69,7 +70,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
+          <div className="bg-white md:p-[36px] p-[15px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -91,7 +92,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
+          <div className="bg-white md:p-[36px] p-[15px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -113,7 +114,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
+          <div className="bg-white md:p-[36px] p-[15px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -135,6 +136,12 @@ const Page = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      <div className="lg:hidden flex justify-center my-4">
+          <button className=" px-[24px] py-[16px] bg-[#F8991F] text-white rounded lg:mt-0 mt-4 lg:mx-0 mx-4">
+            See More
+          </button>
+        </div>
+    </div>
     </div>
   );
 };
