@@ -29,8 +29,8 @@ const Description = () => {
       </Form>
       <div className="flex justify-end">
       <div className="flex gap-x-4 items-center">
-       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('general')}}>Previous</button>
-       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('product features')}}>Next</button>
+       <button className="bg-[#5664d2] text-white px-[12px] py-[7.52px] rounded"onClick={()=>{setTab('general')}}>Previous</button>
+       <button className="bg-[#5664d2] text-white px-[12px] py-[7.52px] rounded"onClick={()=>{setTab('product features')}}>Next</button>
       </div>
       </div>
     </div>

@@ -540,7 +540,7 @@ const GeneralForm = () => {
       <div className="flex justify-end">
       <div className="flex gap-x-4 items-center">
        {/* <button className="bg-purple-500 text-white h-12 w-24">Previous</button> */}
-       <button className="bg-purple-500 text-white h-12 w-24"onClick={()=>{setTab('descriptions')}}>Next</button>
+       <button className="bg-[#5664d2] text-white px-[12px] py-[7.52px] rounded"onClick={()=>{setTab('descriptions')}}>Next</button>
       </div>
       </div>
     </div>
