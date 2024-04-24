@@ -47,7 +47,7 @@ const Page = () => {
         bulletActiveClass='swiper-pagination-bullet-active'
       >
         <SwiperSlide>
-          <div className="bg-white p-[36px] mt-[50px] mb-[35px] rounded-xl">
+          <div className="bg-white p-[36px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -69,7 +69,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl">
+          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -91,7 +91,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl">
+          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -113,7 +113,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl">
+          <div className="bg-white p-[36px] my-[50px] mt-[50px] mb-[35px] rounded-xl shadow-sm">
             <Rate disabled defaultValue={2} style={{ color: "#F8991F" }} />
             <p className="lg:text-[20px] my-[24px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
