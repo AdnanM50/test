@@ -72,9 +72,8 @@ const Feature = () => {
                       </div>
                       <div className="col-span-1  mt-2">
                       <AiOutlineDelete
-                        size={36}
+                        size={18}
                         style={{ color: "red" }}
-                        size={14}
                         onClick={() => remove(name)}
                       />
                     </div>
