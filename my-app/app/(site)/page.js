@@ -63,7 +63,7 @@ const Page = () => {
                 className="h-[65px] w-[65px] object fill rounded-full"
               />
               <div>
-                <h2 className="text-[18px] text-[#0F0F0F]">Angela Karamoy</h2>
+                <h2 className="text-[18px] text-[#0F0F0F] mb-2">Angela Karamoy</h2>
                 <h2 className="text-[#969BA0]">Happy Customer</h2>
               </div>
             </div>
@@ -85,7 +85,7 @@ const Page = () => {
                 className="h-[65px] w-[65px] object fill rounded-full"
               />
               <div>
-                <h2 className="text-[18px] text-[#0F0F0F]">Angela Karamoy</h2>
+                <h2 className="text-[18px] text-[#0F0F0F] mb-2">Angela Karamoy</h2>
                 <h2 className="text-[#969BA0]">Happy Customer</h2>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Page = () => {
                 className="h-[65px] w-[65px] object fill rounded-full"
               />
               <div>
-                <h2 className="text-[18px] text-[#0F0F0F]">Angela Karamoy</h2>
+                <h2 className="text-[18px] text-[#0F0F0F] mb-2">Angela Karamoy</h2>
                 <h2 className="text-[#969BA0]">Happy Customer</h2>
               </div>
             </div>
@@ -129,7 +129,7 @@ const Page = () => {
                 className="h-[65px] w-[65px] object fill rounded-full"
               />
               <div>
-                <h2 className="text-[18px] text-[#0F0F0F]">Angela Karamoy</h2>
+                <h2 className="text-[18px] text-[#0F0F0F] mb-2">Angela Karamoy</h2>
                 <h2 className="text-[#969BA0]">Happy Customer</h2>
               </div>
             </div>
