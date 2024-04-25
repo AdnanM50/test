@@ -104,7 +104,7 @@ const page = () => {
   ];
   return (
     <div className="max-w-[1320px] mx-auto lg:px-0 p-2  py-20 bg-gray-200 table_checked">
-      {/* <Table data={foodData} indexed columns={columns} /> */}
+      <Table data={foodData} indexed columns={columns} />
       <Card/>
     </div>
   );
