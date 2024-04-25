@@ -19,7 +19,9 @@ const Feature = () => {
   const [colors, setColor] = useState(false);
   const [modal, setModal] = useState(false);
   const [hex, setHex] = useState("#fff");
-  const[keys,setKey]=useState(null);
+  const [keys, setKey] = useState(null);
+  const [data, setData] = useState(null);
+  console.log("subopt", data);
   console.log(keys);
   // const [disableAlpha, setDisableAlpha] = useState(false);
   console.log("color", hex);
@@ -264,8 +266,8 @@ const Feature = () => {
                                     <Option value="7">puissance</Option>
                                   </Select>
                                 </Form.Item>
-                                {/* {colors && (
-                                  <Form.Item 
+                                {colors && (
+                                  <Form.Item
                                     // {...restField}
                                     name={[subField.name, "color"]}
                                     className={`bg-[${hex}]`}
@@ -278,18 +280,17 @@ const Feature = () => {
                                     // className="h-full"
                                   >
                                     {
-                                       <Button
-                                      style={{ backgroundColor: hex }}
-                                      onClick={() => {
-                                        setModal(true);
-                                      }}
-                                    >
-                                      Select Color
-                                    </Button>
+                                      <Button
+                                        style={{ backgroundColor: hex }}
+                                        onClick={() => {
+                                          setModal(true);
+                                        }}
+                                      >
+                                        Select Color
+                                      </Button>
                                     }
-                                    
                                   </Form.Item>
-                                )} */}
+                                )}
 
                                 <Form.Item
                                   // {...restField}
@@ -322,22 +323,30 @@ const Feature = () => {
                             >
                               <Button
                                 type="dashed"
-                                onClick={() => subOpt.add()}
+                                onClick={() => {
+                                 subOpt.add() 
+                                  setKey(subOpt)// Remove the spread operator here
+                                }}
                                 block
-                                icon={<BsPlusCircleDotted />}
+                                // icon={<BsPlusCircleDotted />}
                               >
                                 Add Property
                               </Button>
                             </Form.Item>
-                            {/* <Form.Item 
-                            // {...restField}
-                             name={[name, "color"]}>
+                            <Form.Item
+                              // {...restField}
+                              name={[name, "color"]}
+                            >
                               <Checkbox
-                                onChange={(e) => setColor(e.target.checked)}
+                                onChange={(e) => {
+                                  setColor(e.target.checked);
+                                 
+                                }}
+                                onClick={()=>{subOpt.remove()}}
                               >
                                 Color
                               </Checkbox>
-                            </Form.Item> */}
+                            </Form.Item>
                           </div>
                         )}
                       </Form.List>
