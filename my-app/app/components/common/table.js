@@ -7,6 +7,7 @@ import { Loader } from "./loader";
 
 import { Modal } from 'antd';
 import { useState } from "react";
+import { useI18n } from "../../providers/i18n";
 
 const Table = ({
     columns,
@@ -27,6 +28,7 @@ const Table = ({
     afterSearch,
     onSearchChange,
 }) => {
+    const i18n = useI18n()
 
     let cols = noActions ? columns : [...columns, {
         text: 'Action',
@@ -104,7 +106,7 @@ const Table = ({
                                         <th className="p-2 whitespace-nowrap text-left" key={index}>
                                             <div
                                                 className={`font-semibold ${column?.className || ''}`}>
-                                              (column.text)
+                                                {i18n.t(column.text)}
                                             </div>
                                         </th>
                                     ))}
@@ -177,7 +179,7 @@ export const Table2 = ({
 
 
     let cols = noActions ? columns : [...columns, {
-        text: 'Action',
+        text: i18n.t('Action'),
         dataField: 'no_actions',
         className: 'w-44 text-right',
         formatter: (noActions, data) => {
@@ -213,6 +215,7 @@ export const Table2 = ({
         }
     }]
 
+    const i18n = useI18n()
 
 
 
@@ -252,7 +255,7 @@ export const Table2 = ({
                                         <th className="p-2 whitespace-nowrap text-left" key={index}>
                                             <div
                                                 className={`font-semibold ${column?.className || ''}`}>
-                                                {column.text}
+                                                {i18n.t(column.text)}
                                             </div>
                                         </th>
                                     ))}
@@ -303,21 +306,21 @@ export const Table2 = ({
     )
 }
 
-export const DetailTable = ({ data, columns, title, actions , more}) => {
+export const DetailTable = ({ data, columns, title, actions }) => {
+    const i18n = useI18n()
     return (
         <div className="bg-white shadow-md rounded-md p-4">
-            {!!title && <div className="text-xl font-semibold mb-4">{title}</div>}
+            {!!title && <div className="text-xl font-semibold mb-4">{i18n.t(title)}</div>}
             <div className="body">
                 <div className="overflow-x-auto">
                     <table className="min-w-full border border-gray-300">
                         <tbody>
                             {columns?.map((column, index) => (
                                 <tr key={index} className="border-b border-gray-300">
-                                    <td className="py-2 px-4">{column.text}</td>
+                                    <td className="py-2 px-4">{i18n.t(column.text)}</td>
                                     <td className="py-2 px-4 text-sm">{!!data ? !!column?.formatter ? column?.formatter(data[column.dataIndex], data) : data[column.dataIndex] : ''}</td>
                                 </tr>
                             ))}
-                            {more}
                         </tbody>
                     </table>
                 </div>

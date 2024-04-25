@@ -36,7 +36,11 @@ body {
 //   font-weight: 400;
 //   text-transform: uppercase;
 // }
-
+.ant-checkbox-checked .ant-checkbox-inner {
+  width: 15px;
+  height: 15px;
+  background: #F8991F!important;
+}
 a:hover {
   text-decoration: none !important;
 }
@@ -65,14 +69,7 @@ a:hover {
   outline: 0 !important;
 }
 
-.schedule {
-  table,
-  th,
-  td {
-    border: 1px solid #f0f0f0;
-    padding: 2px;
-  }
-}
+
 
 .antbutton {
   .ant-tabs-tab .ant-tabs-tab-active {

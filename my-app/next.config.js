@@ -12,7 +12,7 @@ module.exports = {
   },
   images: {
     domains: [
-      "appstick.s3.ap-southeast-1.amazonaws.com", ],
+      "appstick.s3.ap-southeast-1.amazonaws.com", 'image.shutterstock.com'],
   },
   experimental: {
     missingSuspenseWithCSRBailout: false,
