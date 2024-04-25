@@ -36,11 +36,14 @@ body {
 //   font-weight: 400;
 //   text-transform: uppercase;
 // }
-.ant-checkbox-checked .ant-checkbox-inner {
-  width: 15px;
-  height: 15px;
-  background: #F8991F!important;
+.table_checked{
+  .ant-checkbox-checked .ant-checkbox-inner {
+    width: 16px!important;
+    height: 16px!important;
+    background: #F8991F!important;
+  }
 }
+
 a:hover {
   text-decoration: none !important;
 }

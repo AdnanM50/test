@@ -29,7 +29,7 @@ const Table = ({
   return (
     <>
       <div
-        className={`w-full bg-gray-200 ${shadow ? "shadow-lg" : ""} rounded-sm mb-4`}
+        className={`w-full bg-gray-200 ${shadow ? "shadow-lg" : ""} rounded-sm mb-4 `}
       >
         {noHeader || (
           <header className="px-4 pt-3 pb-2 border-b border-gray-100 flex justify-between flex-wrap">
