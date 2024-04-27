@@ -1,14 +1,14 @@
 import React from "react";
-import { foodData } from "@/app/data";
+// import { foodData } from "@/app/data";
 import { Checkbox, Rate } from "antd";
 import Image from "next/image";
 import deleteImage from "../../../public/delete.png";
 import editImage from "../../../public/edit.png";
 import shareImage from "../../../public/share.png";
-const Card = () => {
+const Card = ({data}) => {
   return (
     <div className="grid grid-cols-1 md:hidden w-full">
-      {foodData.map((i, index) => {
+      {data?.map((i, index) => {
         return (
           <div key={index} className=" py-[16px] pe-[12px] ps-[16px] bg-white flex items-center gap-x-[17px] mb-[6px] ">
             <div>

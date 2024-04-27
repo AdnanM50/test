@@ -397,3 +397,15 @@ select option:checked {
   body{
     font-family: "Plus Jakarta Sans";
   }
+
+
+  .table2{
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  }
+
+  .shadow-custom {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.07);
+  }
