@@ -8,13 +8,13 @@ const page = () => {
     <div>
       {/* banner */}
 
-      <div className="  pb-[214px] relative">
-        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat xl:ps-[100px] lg:ps-[50px] pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]">
-          <div className="flex lg:flex-row flex-col-reverse xl:gap-x-[122px] lg:gap-x-[100px] items-start">
-            <div className="pt-[22px] lg:w-[40%]   w-full lg:pb-[100px] pb-[50px]">
+      <div className="   ">
+        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat   pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]  z-10">
+          <div className="flex lg:flex-row flex-col-reverse xl:gap-x-[122px] lg:gap-x-[100px] items-start container">
+            <div className="pt-[22px] lg:w-[50%]   w-full lg:pb-[100px] pb-[50px]">
               <Image
                 src="/car_svg.png"
-                className="h-[257px] md:w-[477px] w-full absolute lg:left-[20px] mt-[64px] object-fill md:block hidden "
+                className="h-[257px] md:w-[477px] w-full absolute lg:left-[300px] mt-[64px] object-fill md:block hidden "
                 height={257}
                 width={477}
               />
@@ -50,12 +50,14 @@ const page = () => {
               alt="car"
               width={798}
               height={424}
-              className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill "
+              className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill 2xl:me-[-300px]"
             />
             {/* </div> */}
-          
-          </div>
-          <div className="grid xl:grid-cols-4 grid-cols-2 xl:gap-y-0 gap-y-[50px]  md:py-[50px] py-[50px] bg-white container rounded-lg shadow_custom2 absolute xl:bottom-[-94px] md:bottom-[-200px] bottom-[-94px] w-[90%] ">
+        </div>
+        </div>
+       </div>
+       <div className="container">
+          <div className="grid lg:grid-cols-4 grid-cols-2 xl:gap-y-0 gap-y-[50px]  md:py-[50px] py-[50px] bg-white  rounded-lg shadow_custom2  mt-[-94px] relative z-30">
             <div className=" flex justify-between items-center ">
               <div className="  mx-auto text-center">
                 <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">8k+</h1>
@@ -84,39 +86,8 @@ const page = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
      
-      </div>
-      {/* banner-next-part */}
-        {/* <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:ps-[80px] md:pe-[82px] md:py-[50px] bg-white container rounded-lg shadow_custom2">
-            <div className=" flex justify-between items-center ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
-                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
-            </div>
-            <div className=" flex justify-between items-center  ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
-                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
-            </div>
-            <div className=" flex justify-between items-center ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
-                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
-            </div>
-            <div className=" flex justify-between items-center">
-              <div className=" mx-auto text-center">
-                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
-                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
-              </div>
-            </div>
-          </div> */}
     </div>
   );
 };
