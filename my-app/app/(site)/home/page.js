@@ -8,49 +8,115 @@ const page = () => {
     <div>
       {/* banner */}
 
-      <div className="pb-[214px] ">
-        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat xl:ps-[100px] lg:ps-[50px] pt-[79px] flex lg:flex-row flex-col xl:gap-x-[122px] lg:gap-x-[100px] relative lg:px-0 md:px-6 px-2">
-          <div className="pt-[22px] lg:w-[40%]   w-full lg:pb-[100px] pb-[50px]">
-            <Image
-              src="/car_svg.png"
-              className="h-[257px] md:w-[477px] w-full absolute lg:left-[20px] mt-[64px] object-fill md:block hidden "
-              height={257}
-              width={477}
-            />
-            <h2 className="xl:text-[61px] md:text-[38px] sm:text-start text-center text-[28px] text-white font-bold mb-[32px] capitatlzie">
-              Get Your Best Car2Go Ride-Sharing Services
-            </h2>
-            <p className="text-white font-normal  w-full mb-[40px] sm:text-[16px] text-[12px]">
-              Unlock a World of Convenience: Welcome to Car2Go Your Ultimate
-              Ride-Sharing Destination! Seamlessly Connect with Reliable Drivers
-              Enjoy Comfortable Journeys- One Ride at a Time. Unlock a World of
-              Convenience: Welcome to Car2Go Your Ultimate Ride-Sharing
-              Destination! Seamlessly Connect with Reliable Drivers{" "}
-            </p>
-            <div className="flex gap-x-[16px]">
-              <Input
-                placeholder="Pickup location"
-                className="py-[12px] px-[20px]"
-                suffix={<VscSend />}
+      <div className="  pb-[214px] relative">
+        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat xl:ps-[100px] lg:ps-[50px] pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]">
+          <div className="flex lg:flex-row flex-col-reverse xl:gap-x-[122px] lg:gap-x-[100px] items-start">
+            <div className="pt-[22px] lg:w-[40%]   w-full lg:pb-[100px] pb-[50px]">
+              <Image
+                src="/car_svg.png"
+                className="h-[257px] md:w-[477px] w-full absolute lg:left-[20px] mt-[64px] object-fill md:block hidden "
+                height={257}
+                width={477}
               />
-              <Input
-                placeholder="Enter destination"
-                className="py-[12px] px-[20px]"
-              />
+              <h2 className="xl:text-[61px] md:text-[38px] sm:text-start text-center text-[28px] text-white font-bold mb-[32px] capitatlize">
+                Get Your Best Car2Go Ride-Sharing Services
+              </h2>
+              <p className="text-white font-normal  w-full mb-[40px] sm:text-[16px] text-[12px]">
+                Unlock a World of Convenience: Welcome to Car2Go Your Ultimate
+                Ride-Sharing Destination! Seamlessly Connect with Reliable
+                Drivers Enjoy Comfortable Journeys- One Ride at a Time. Unlock a
+                World of Convenience: Welcome to Car2Go Your Ultimate
+                Ride-Sharing Destination! Seamlessly Connect with Reliable
+                Drivers{" "}
+              </p>
+              <div className="flex gap-x-[16px]">
+                <Input
+                  placeholder="Pickup location"
+                  className="md:py-[12px] md:px-[20px] py-[10px] px-[8px]"
+                  suffix={<VscSend />}
+                />
+                <Input
+                  placeholder="Enter destination"
+                  className="md:py-[12px] md:px-[20px] py-[10px] px-[8px]"
+                />
+              </div>
+              <button className="text-white px-[24px] py-[16px] bg-[#186F65] sm:w-auto w-full capitalize mt-[16px] rounded  ">
+                Book Ride
+              </button>
             </div>
-            <button className="text-white px-[24px] py-[16px] bg-[#186F65] capitalize mt-[16px] rounded">
-              Book Ride
-            </button>
+            {/* <div className=" pb-[100px]"> */}
+            <Image
+              src="/car.png"
+              alt="car"
+              width={798}
+              height={424}
+              className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill "
+            />
+            {/* </div> */}
+          
           </div>
-          <Image
-            src="/car.png"
-            alt="car"
-            width={798}
-            height={424}
-            className="w-full lg:w-[50%]  xl:h-[424px] md:h-[380px] h-[250px] object-fill "
-          />
+          <div className="grid xl:grid-cols-4 grid-cols-2 xl:gap-y-0 gap-y-[50px]  md:py-[50px] py-[50px] bg-white container rounded-lg shadow_custom2 absolute xl:bottom-[-94px] md:bottom-[-200px] bottom-[-94px] w-[90%] ">
+            <div className=" flex justify-between items-center ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">8k+</h1>
+                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">App Downloads</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+            </div>
+            <div className=" flex justify-between items-center  ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">6k+</h1>
+                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Active Rider</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+            </div>
+            <div className=" flex justify-between items-center  ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49]  font-medium md:text-[40px] text-[28px] ">4k+</h1>
+                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Active User</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+            </div>
+            <div className=" flex justify-between items-center ">
+              <div className=" mx-auto text-center">
+                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">16k+</h1>
+                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Tripe Saved</h6>
+              </div>
+            </div>
+          </div>
         </div>
+     
       </div>
+      {/* banner-next-part */}
+        {/* <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:ps-[80px] md:pe-[82px] md:py-[50px] bg-white container rounded-lg shadow_custom2">
+            <div className=" flex justify-between items-center ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
+                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
+            </div>
+            <div className=" flex justify-between items-center  ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
+                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
+            </div>
+            <div className=" flex justify-between items-center ">
+              <div className="  mx-auto text-center">
+                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
+                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
+              </div>
+              <div className="h-[46px] w-[2px] bg-[#292B49]"></div>
+            </div>
+            <div className=" flex justify-between items-center">
+              <div className=" mx-auto text-center">
+                <h1 className="text-[#292B49] text-[40px] font-medium ">8k+</h1>
+                <h6 className="font-normal text-[#292B49]">App Downloads</h6>
+              </div>
+            </div>
+          </div> */}
     </div>
   );
 };
