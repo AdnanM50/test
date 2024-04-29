@@ -1,12 +1,11 @@
 import React from "react";
-import group from "../../../public/group.png";
 import Image from "next/image";
 const page = () => {
   return (
     <div className="md:mb-[100px]">
      <div className="md:mt-[100px] mt-[50px] flex lg:flex-row  flex-col items-center  lg:gap-x-[110px] bg-[#F4F4F4]  gap-y-[24px] 
     px-3 md:px-5 xl:px-0">
-      <div className="lg:w-[40%] w-full xl:ps-[70px] 2xl:ps-[300px] ">
+      <div className="lg:w-1/2 w-full lg:ps-[80px] 2xl:ps-[300px] ">
         <h3 className="text-[24px] font-medium text-[#292B49] mb-[12px] capitalize">
           Car2Go rides are now covered by insurance
         </h3>
@@ -25,9 +24,9 @@ const page = () => {
           infancy.
         </p>
       </div>
-      <div className=" lg:w-[60%] w-full">
+      <div className=" lg:w-1/2 w-full">
         <Image
-          src={group}
+          src="/group.png"
           width={905}
           height={485}
           className=" lg:h-[485px] w-full h-[285px] object-fill"
@@ -36,15 +35,15 @@ const page = () => {
     </div>
     <div className="md:mt-[100px] mt-[50px] flex lg:flex-row  flex-col items-center  lg:gap-x-[110px] bg-[#F4F4F4]  gap-y-[24px] 
     px-3 md:px-5 xl:px-0">
-       <div className=" lg:w-[60%] w-full">
+       <div className=" lg:w-1/2 w-full">
         <Image
-          src={group}
+          src="/group.png"
           width={905}
           height={485}
           className=" lg:h-[485px] w-full h-[285px] object-fill"
         />
       </div>
-      <div className="lg:w-[40%] w-full xl:pe-[70px] 2xl:pe-[300px] ">
+      <div className="lg:w-1/2 w-full xl:pe-[70px] 2xl:pe-[300px] ">
         <h3 className="text-[24px] font-medium text-[#292B49] mb-[12px] capitalize">
         Safety of Captains
         </h3>
@@ -67,7 +66,7 @@ const page = () => {
     </div>
     <div className="md:mt-[100px] mt-[50px] flex lg:flex-row  flex-col items-center  lg:gap-x-[110px] bg-[#F4F4F4]  gap-y-[24px] 
     px-3 md:px-5 xl:px-0">
-      <div className="lg:w-[40%] w-full xl:ps-[70px] 2xl:ps-[300px] ">
+      <div className="lg:w-1/2 w-full xl:ps-[80px] 2xl:ps-[300px] ">
         <h3 className="text-[24px] font-medium text-[#292B49] mb-[12px] capitalize">
           Car2Go rides are now covered by insurance
         </h3>
@@ -86,9 +85,9 @@ const page = () => {
           infancy.
         </p>
       </div>
-      <div className=" lg:w-[60%] w-full">
+      <div className=" lg:w-1/2 w-full">
         <Image
-          src={group}
+          src="/group.png"
           width={905}
           height={485}
           className=" lg:h-[485px] w-full h-[285px] object-fill"
