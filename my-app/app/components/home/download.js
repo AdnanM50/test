@@ -4,70 +4,70 @@ import React from "react";
 const Download = () => {
   return (
     <div className="mb-[120px] mt-[331px]">
-    <div className="container relative">
-    <div className="  xl:px-[241px] md:px-5 pb-[76px] pt-[108px] shadow-custom rounded-tl-2xl rounded-br-2xl border bg-red-300">
-   
-       
-        <h1 className="mt-[21px] text-[#0B204C] md:text-[32px] text-[21px] font-medium text-center">
-          Your Key to Making Money and Reaching Financial Independence is to
-          Unlock Financial Opportunities! UtilizeMond
-        </h1>
-        <p className="mt-[20px] text-[#919BB3] font-medium md:mb-[46px] mb-[20px] text-center">
-          Discover countless opportunities using our platform to transform your
-          passion and skills into a fulfilling source of money.
-        </p>
-        <div className="flex md:flex-row flex-col lg:gap-x-[100px] md:gap-x-[50px] md:gap-y-0 gap-y-[20px] md:justify-center  md:items-center items-start md:ms-0 ms-5">
-          <div className=" md:max-w-[368px] ">
-            <h3 className="text-[18px] font-normal mb-[12px] md:text-center">
-              User App
-            </h3>
-            <div className="flex flex-row gap-x-[12px]  ">
-              <Image
-                src="/apple_store.png"
-                height={52}
-                width={178}
-                className="lg:w-[178px] w-[50%] h-[52px] object-fill"
-                alt="app store"
-              />
-              <Image
-                src="/google_play.png"
-                height={52}
-                width={178}
-                className="lg:w-[178px] w-[50%] h-[52px] object-fill"
-                alt="app store"
-              />
+      <div className="container relative">
+        <div className="  xl:px-[241px] md:px-5 px-3 pb-[76px] pt-[108px] shadow-custom rounded-tl-2xl rounded-br-2xl border bg-red-300">
+          <h1 className="mt-[21px] text-[#0B204C] md:text-[32px] text-[21px] font-medium text-center">
+            Your Key to Making Money and Reaching Financial Independence is to
+            Unlock Financial Opportunities! UtilizeMond
+          </h1>
+          <p className="mt-[20px] text-[#919BB3] font-medium md:mb-[46px] mb-[20px] text-center sm:text-[16px] text-[14px]">
+            Discover countless opportunities using our platform to transform
+            your passion and skills into a fulfilling source of money.
+          </p>
+          <div className="flex sm:flex-row  flex-col lg:gap-x-[100px] sm:gap-x-[50px] md:gap-y-0 gap-y-[20px] sm:justify-center  md:items-center items-start md:ms-0 ms-3">
+            <div className=" md:max-w-[368px] ">
+              <h3 className="text-[18px] font-normal mb-[12px] md:text-center">
+                User App
+              </h3>
+              <div className="flex lg:flex-row flex-col gap-y-[12px] gap-x-[12px] ">
+                <Image
+                  src="/apple_store.png"
+                  height={52}
+                  width={178}
+                  className="w-[178px] h-[52px] object-fill"
+                  alt="app store"
+                />
+                <Image
+                  src="/google_play.png"
+                  height={52}
+                  width={178}
+                  className="w-[178px] h-[52px] object-fill"
+                  alt="app store"
+                />
+              </div>
             </div>
-          </div>
-          <div className="bg-red-300 md:max-w-[368px]">
-            <h3 className="text-[18px] font-normal mb-[12px] md:text-center">
-              Driver App
-            </h3>
-            <div className="flex flex-row gap-x-[12px] ">
-              <Image
-                src="/apple_store.png"
-                height={52}
-                width={178}
-                className="lg:w-[178px] w-[50%] h-[52px] object-fill"
-                alt="app store"
-              />
-              <Image
-                src="/google_play.png"
-                height={52}
-                width={178}
-                className="lg:w-[178px] w-[50%] h-[52px] object-fill"
-                alt="app store"
-              />
+            <div className="bg-red-300 md:max-w-[368px]">
+              <h3 className="text-[18px] font-normal mb-[12px] md:text-center">
+                Driver App
+              </h3>
+              <div className="flex lg:flex-row flex-col gap-y-[12px] gap-x-[12px] ">
+                <Image
+                  src="/apple_store.png"
+                  height={52}
+                  width={178}
+                  className=" w-[178px] h-[52px] object-fill"
+                  alt="app store"
+                />
+                <Image
+                  src="/google_play.png"
+                  height={52}
+                  width={178}
+                  className="w-[178px] h-[52px] object-fill"
+                  alt="app store"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center">
-      <img
-          src="/white_car.png"
-          className="md:w-[624px] w-[424px] md:h-[298px] h-[198px] object-fill  absolute md:top-[-211px] top-[-120px]"
-          alt="white car"
-        />
-      </div>
+        <div className="flex justify-center ">
+         <div className="md:max-w-[624]  md:max-h-[298px] absolute md:top-[-211px] sm:top-[-100px] top-[-50px]">
+            <img
+              src="/white_car.png"
+              alt="earning"
+              className="md:w-auto sm:w-[424px] w-[250px] h-full object-fit"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
