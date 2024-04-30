@@ -1,3 +1,5 @@
+import Solution from "@/app/components/home/solution";
+import Service from "@/app/components/home/usd";
 import { Input } from "antd";
 import Image from "next/image";
 import React from "react";
@@ -7,9 +9,8 @@ const page = () => {
   return (
     <div>
       {/* banner */}
-
-      <div className="   ">
-        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat   pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]  z-10">
+      <div className="">
+        <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]  z-10">
           <div className="flex lg:flex-row flex-col-reverse xl:gap-x-[122px] lg:gap-x-[100px] items-start container">
             <div className="pt-[22px] lg:w-[50%]   w-full lg:pb-[100px] pb-[50px]">
               <Image
@@ -44,7 +45,6 @@ const page = () => {
                 Book Ride
               </button>
             </div>
-            {/* <div className=" pb-[100px]"> */}
             <Image
               src="/car.png"
               alt="car"
@@ -52,42 +52,60 @@ const page = () => {
               height={424}
               className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill 2xl:me-[-300px]"
             />
-            {/* </div> */}
+          </div>
         </div>
-        </div>
-       </div>
-       <div className="container">
-          <div className="grid lg:grid-cols-4 grid-cols-2 xl:gap-y-0 gap-y-[50px]  md:py-[50px] py-[50px] bg-white  rounded-lg shadow_custom2  mt-[-94px] relative z-30">
-            <div className=" flex justify-between items-center ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">8k+</h1>
-                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">App Downloads</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+      </div>
+      <div className="container">
+        <div className="grid lg:grid-cols-4 grid-cols-2 xl:gap-y-0 gap-y-[50px]  md:py-[50px] py-[50px] bg-white  rounded-lg shadow_custom2  mt-[-94px] relative z-30">
+          <div className=" flex justify-between items-center ">
+            <div className="  mx-auto text-center">
+              <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">
+                8k+
+              </h1>
+              <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">
+                App Downloads
+              </h6>
             </div>
-            <div className=" flex justify-between items-center  ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">6k+</h1>
-                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Active Rider</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+            <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+          </div>
+          <div className=" flex justify-between items-center  ">
+            <div className="  mx-auto text-center">
+              <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">
+                6k+
+              </h1>
+              <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">
+                Active Rider
+              </h6>
             </div>
-            <div className=" flex justify-between items-center  ">
-              <div className="  mx-auto text-center">
-                <h1 className="text-[#292B49]  font-medium md:text-[40px] text-[28px] ">4k+</h1>
-                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Active User</h6>
-              </div>
-              <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+            <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+          </div>
+          <div className=" flex justify-between items-center  ">
+            <div className="  mx-auto text-center">
+              <h1 className="text-[#292B49]  font-medium md:text-[40px] text-[28px] ">
+                4k+
+              </h1>
+              <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">
+                Active User
+              </h6>
             </div>
-            <div className=" flex justify-between items-center ">
-              <div className=" mx-auto text-center">
-                <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">16k+</h1>
-                <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">Tripe Saved</h6>
-              </div>
+            <div className="h-[46px] w-[2px] bg-[#292B49] xl:block hidden"></div>
+          </div>
+          <div className=" flex justify-between items-center ">
+            <div className=" mx-auto text-center">
+              <h1 className="text-[#292B49] md:text-[40px] text-[28px] font-medium ">
+                16k+
+              </h1>
+              <h6 className="font-normal text-[#292B49] md:text-[16px] text-[14px]">
+                Tripe Saved
+              </h6>
             </div>
           </div>
-          </div>
-     
+        </div>
+      </div>
+
+      {/* Solution Section */}
+      <Solution/>
+      <Service/>
     </div>
   );
 };
