@@ -1,3 +1,4 @@
+import Download from "@/app/components/home/download";
 import Solution from "@/app/components/home/solution";
 import Service from "@/app/components/home/usd";
 import { Input } from "antd";
@@ -102,10 +103,9 @@ const page = () => {
           </div>
         </div>
       </div>
-
-      {/* Solution Section */}
       <Solution/>
-      <Service/>
+      {/* <Service/> */}
+      <Download/>
     </div>
   );
 };
