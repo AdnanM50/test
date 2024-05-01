@@ -5,7 +5,7 @@ const Download = () => {
   return (
     <div className="mb-[120px] mt-[331px]">
       <div className="container relative">
-        <div className="  xl:px-[241px] md:px-5 px-3 pb-[76px] pt-[108px] shadow-custom rounded-tl-2xl rounded-br-2xl border bg-white">
+        <div className="  xl:px-[241px] md:px-5 px-3 lg:pb-[76px] pb-[40px] pt-[108px] shadow-custom rounded-tl-2xl rounded-br-2xl border bg-white">
           <h1 className="mt-[21px] text-[#0B204C] md:text-[32px] text-[21px] font-medium text-center md:max-w-[715px] mx-auto">
             Your Key to Making Money and Reaching Financial Independence is to
             Unlock Financial Opportunities! UtilizeMond
@@ -14,24 +14,24 @@ const Download = () => {
             Discover countless opportunities using our platform to transform
             your passion and skills into a fulfilling source of money.
           </p>
-          <div className="flex sm:flex-row  flex-col lg:gap-x-[100px] sm:gap-x-[50px] md:gap-y-0 gap-y-[20px] sm:justify-center  md:items-center items-start md:ms-0 ms-3">
+          <div className="flex flex-row  lg:gap-x-[100px] sm:gap-x-[50px] gap-x-[12px] md:gap-y-0 gap-y-[20px] sm:justify-center  md:items-center items-start md:ms-0 ms-3">
             <div className=" md:max-w-[368px] ">
               <h3 className="text-[18px] font-normal mb-[12px] md:text-center">
                 User App
               </h3>
-              <div className="flex lg:flex-row flex-col gap-y-[12px] gap-x-[12px] ">
+              <div className="flex lg:flex-row flex-col gap-y-[12px] gap-x-[12px]  ">
                 <Image
                   src="/apple_store.png"
                   height={52}
                   width={178}
-                  className="w-[178px] h-[52px] object-fill"
+                  className="sm:w-[178px]  md:h-[52px] w-[150px] object-fill"
                   alt="app store"
                 />
                 <Image
                   src="/google_play.png"
                   height={52}
                   width={178}
-                  className="w-[178px] h-[52px] object-fill"
+                  className="sm:w-[178px]  md:h-[52px] w-[150px] object-fill"
                   alt="app store"
                 />
               </div>
@@ -45,14 +45,14 @@ const Download = () => {
                   src="/apple_store.png"
                   height={52}
                   width={178}
-                  className=" w-[178px] h-[52px] object-fill"
+                  className="sm:w-[178px]  md:h-[52px] w-[150px] object-fill"
                   alt="app store"
                 />
                 <Image
                   src="/google_play.png"
                   height={52}
                   width={178}
-                  className="w-[178px] h-[52px] object-fill"
+                  className="sm:w-[178px]  md:h-[52px] w-[150px] object-fill"
                   alt="app store"
                 />
               </div>
