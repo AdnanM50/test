@@ -12,7 +12,7 @@ const page = () => {
       {/* banner */}
       <div className="">
         <div className="bg-[url('/banner.png')] bg-cover bg-no-repeat pt-[79px] relative lg:px-0 md:px-6 px-2  pb-[100px]  z-10">
-          <div className="flex lg:flex-row flex-col-reverse xl:gap-x-[122px] lg:gap-x-[100px] items-start container">
+          <div className="flex lg:flex-row flex-col-reverse 2xl:gap-x- xl:gap-x-[100px] lg:gap-x-[100px] items-start container">
             <div className="pt-[22px] lg:w-[50%]   w-full lg:pb-[100px] pb-[50px]">
               <Image
                 src="/car_svg.png"
@@ -51,7 +51,7 @@ const page = () => {
               alt="car"
               width={798}
               height={424}
-              className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill 2xl:me-[-300px]"
+              className="w-full lg:w-[50%]  lg:h-[424px] md:h-[300px] h-[250px] object-fill 2xl:me-[-300px] "
             />
           </div>
         </div>
