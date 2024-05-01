@@ -1,6 +1,7 @@
 import Download from "@/app/components/home/download";
+import Service from "@/app/components/home/service";
 import Solution from "@/app/components/home/solution";
-import Service from "@/app/components/home/usd";
+// import Service from "@/app/components/home/usd";
 import { Input } from "antd";
 import Image from "next/image";
 import React from "react";
@@ -106,6 +107,7 @@ const page = () => {
       <Solution/>
       {/* <Service/> */}
       <Download/>
+      <Service/>
     </div>
   );
 };
